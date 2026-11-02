@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Strata placeholder test</title>
+  <style>
+    @font-face { font-family: "Strata Inter"; src: url("/fonts/Inter-SemiBold.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: block; }
+    @font-face { font-family: "Strata Serif"; src: url("/fonts/SourceSerif4-Semibold.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: block; }
+    @font-face { font-family: "Strata Sans"; src: url("/fonts/SourceSans3-Semibold.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: block; }
+    @font-face { font-family: "Strata Sans Numerals"; src: url("/fonts/SourceSans3-Semibold.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: block; font-feature-settings: "tnum" 1, "lnum" 1; }
+    @font-face { font-family: "Strata Sans"; src: url("/fonts/SourceSans3-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: block; }
+    @font-face { font-family: "Strata Sans Numerals"; src: url("/fonts/SourceSans3-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: block; font-feature-settings: "tnum" 1, "lnum" 1; }
+    body { margin: 0; background: #202120; color: #e8decc; font: 600 14px "Strata Inter"; }
+    canvas { display: block; width: 100vw; height: 56.25vw; max-height: 100vh; object-fit: contain; }
+    form { padding: 12px 20px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    label { display: flex; align-items: center; gap: 8px; }
+    input[type=range] { width: 240px; }
+    output, dialog { font-variant-numeric: tabular-nums; }
+    button, select { font: inherit; }
+    pre { white-space: pre-wrap; margin: 20px; }
+    body.capture form, body.capture pre { display: none; }
+    [hidden] { display: none !important; }
+    #source-label { position: fixed; padding: 0; border: 0; background: transparent; cursor: pointer; }
+    #source-label:focus-visible { outline: 3px solid #363d36; outline-offset: 3px; }
+    dialog { background: #ece9e1; color: #343a34; border: 1px solid #68675e; padding: 24px; }
+  </style>
+</head>
+<body>
+  <canvas id="scene" width="1920" height="1080"></canvas>
+  <form>
+    <label>Placeholder year <input id="year" type="range" min="0" max="100" value="32" step=".1"><output id="year-value">32</output></label>
+    <label>Seconds <input id="seconds" type="range" min="0" max="30" value="4" step=".01"><output id="seconds-value">4</output></label>
+    <button id="play" type="button">Play motion</button>
+    <button id="benchmark" type="button">Measure 600 frames</button>
+    <label id="variant-label" hidden>Ghost <select id="variant"><option value="edges">Wall outlines</option></select></label>
+    <label id="era-label" hidden>Title test <select id="era"><option value="pre-mauryan">Pre-Mauryan</option><option value="sunga">Sunga</option></select></label>
+    <label id="typeface-label" hidden>Type <select id="typeface"><option value="inter">A: Inter</option><option value="adobe">B: Source Serif / Sans</option></select></label>
+    <label id="palette-label" hidden>Palette <select id="palette"><option value="clay">Neutral clay</option><option value="photo">Photo-informed</option></select></label>
+  </form>
+  <button id="source-label" type="button" hidden></button>
+  <dialog id="source-dialog"><h2 id="source-id"></h2><p>Placeholder source record. No historical evidence attached.</p><button id="close-source" type="button">Close</button></dialog>
+  <pre id="results"></pre>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
