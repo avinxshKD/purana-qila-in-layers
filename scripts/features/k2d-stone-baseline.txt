@@ -1,0 +1,26 @@
+import { gridTriangles, noise2, smooth } from './patch-geometry.js';
+import { tetraSolid } from './solid.js';
+export function stonePieces(spec,lab){
+ const base=spec.base??0,height=spec.height??.12,raw=spec.footprint,poly=raw[0][0]===raw.at(-1)[0]&&raw[0][1]===raw.at(-1)[1]?raw.slice(0,-1):raw;
+ const centre=poly.reduce((a,p)=>[a[0]+p[0]/poly.length,a[1]+p[1]/poly.length],[0,0]);
+ const triangles=gridTriangles(poly,.09);
+ const topPoint=p=>[centre[0]+(p[0]-centre[0])*.94,centre[1]+(p[1]-centre[1])*.94];
+ const rawHeight=(x,z)=>.05*(x-centre[0])+.004*noise2(x/.10,z/.10,991)-.003*Math.cos((z-centre[1])/.15);
+ const values=triangles.flatMap(t=>t.map(p=>rawHeight(...topPoint(p)))),low=Math.min(...values),high=Math.max(...values);
+ const heightAt=(x,z)=>base+height-.03+.03*(rawHeight(x,z)-low)/(high-low||1);
+ const pieces=[];
+ for(const t of triangles){
+  const points=[...t].sort((a,b)=>a[0]-b[0]||a[1]-b[1]);
+  const levels=[points.map(([x,z])=>[x,base,z]),points.map(([x,z])=>[centre[0]+(x-centre[0])*.995,heightAt(...topPoint([x,z]))-.015,centre[1]+(z-centre[1])*.995]),points.map(p=>{const q=topPoint(p);return[q[0],heightAt(...q),q[1]];})];
+  for(let level=0;level<2;level++){
+   const v=[...levels[level],...levels[level+1]];
+   for(const ids of [[0,1,2,5],[0,1,4,5],[0,3,4,5]]){
+    const faces=tetraSolid(ids.map(i=>v[i]));if(level===1)for(const f of faces)if(f.every(p=>levels[2].includes(p)))f.surface=true;
+    pieces.push({faces,tier:1,lab,material:'stone',unitId:spec.id,featureId:spec.id,base,finish:[3,0],dustAt:(x,z)=>.12+.4*(1-smooth(.2,.65,noise2(x/.13,z/.13,729)))});
+   }
+  }
+ }
+ // No independent corner clipping/normal interpolation: both could expose a
+ // needle at the traced concavity. Shared planar vertices remain continuous.
+ return pieces;
+}
