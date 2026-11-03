@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "builtOn": "2026-11-03",
+  "scope": "Every source cited by about-draft.md. URLs are identical to the About source key and, where present, to the film-callouts.json and site-drawers.json registries.",
+  "verificationNote": "lastVerified is the most recent date the content was fetched or checked; titles are as served by each page on 2026-11-03.",
+  "sources": [
+    {
+      "id": "P1",
+      "shortCite": "Swarnkar and Bal",
+      "title": "A Comprehensive Picture of Delhi’s Archaeology Through Excavations at Purana Qila",
+      "authors": "Vasant Kumar Swarnkar and Satarupa Bal (ASI)",
+      "publication": "Heritage: Journal of Multidisciplinary Studies in Archaeology 11.1, pp.351–370",
+      "date": "2023–24",
+      "dateNote": "Volume year as printed; running headers read “2023-24 (2024)”.",
+      "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+      "originalURL": "https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+      "lastVerified": "2026-11-03",
+      "verification": "Archive PDF bytes verified 2026-11-01 (SHA-256 0143A324…6D75A1, matching the direct file). Quotations rechecked on 2026-11-03 against the locally saved fetched paper text, not a new download."
+    },
+    {
+      "id": "P2",
+      "shortCite": "PIB",
+      "title": "Union Minister Shri G Kishan Reddy Inspects Ongoing Excavation at Purana Qila, Delhi",
+      "authors": "Ministry of Culture / Press Information Bureau",
+      "publication": "PIB",
+      "date": "2023-05-30",
+      "url": "https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=1928410",
+      "lastVerified": "2026-11-03",
+      "verification": "Re-fetched 2026-11-03 at this URL; page title recorded as served; “Currently, structures from the early Kushana level have been exposed” still present."
+    },
+    {
+      "id": "N23",
+      "shortCite": "Indian Express 2023",
+      "title": "Excavated trench at Purana Qila to be reopened before G20 Summit",
+      "authors": "Divya A",
+      "publication": "Indian Express",
+      "date": "2023-07-05",
+      "url": "https://indianexpress.com/article/cities/delhi/excavated-trench-at-purana-qila-to-be-reopened-before-g20-summit-8752376/",
+      "lastVerified": "2026-11-03",
+      "verification": "Re-fetched 2026-11-03 at this URL; page title recorded as served; “covered with tin sheets and tarpaulin” still present."
+    },
+    {
+      "id": "N24",
+      "shortCite": "Indian Express 2024",
+      "title": "Searching for Indraprastha: Can excavations at Purana Qila find its Mahabharata link?",
+      "authors": "Adrija Roychowdhury",
+      "publication": "Indian Express",
+      "date": "2024-06-01",
+      "dateNote": "Updated 2024-06-08.",
+      "url": "https://indianexpress.com/article/long-reads/indraprastha-can-excavations-at-purana-qila-find-its-mahabharata-link-9364812/",
+      "lastVerified": "2026-11-03",
+      "verification": "Re-fetched 2026-11-03 at this URL; page title recorded as served; “open to public currenty” and “found some PGW sherds” still present."
+    },
+    {
+      "id": "N26",
+      "shortCite": "New Indian Express",
+      "title": "Delhi's Purana Qila makeover as living cultural space soon",
+      "authors": "Parvez Sultan",
+      "publication": "New Indian Express",
+      "date": "2026-05-06",
+      "url": "https://www.newindianexpress.com/cities/delhi/2026/May/06/delhis-purana-qila-makeover-as-living-cultural-space-soon",
+      "lastVerified": "2026-11-03",
+      "verification": "Re-fetched 2026-11-03 at this URL; page title recorded as served; “viewing decks are proposed” still present."
+    },
+    {
+      "id": "N26b",
+      "shortCite": "Patriot",
+      "title": "Crack-ridden bastion at Delhi's Purana Qila 'unsafe'",
+      "authors": null,
+      "publication": "Patriot",
+      "date": "2026-08-06",
+      "dateNote": "Confirmed by the site API: \"date\":\"2026-08-06T17:49:49\".",
+      "url": "https://thepatriot.in/delhi-ncr/crack-ridden-bastion-at-delhis-purana-qila-unsafe-asi-clears-restoration-plan-88266",
+      "lastVerified": "2026-11-03",
+      "verification": "Re-fetched 2026-11-03 at this URL; page title recorded as served; “North-West Bastion No. 3” still present."
+    },
+    {
+      "id": "D26",
+      "shortCite": "Delhi Tourism",
+      "title": "Museum in Delhi : Old Fort Museum",
+      "authors": "Delhi Tourism",
+      "publication": "delhitourism.gov.in",
+      "date": "01/02/2026",
+      "dateNote": "Footer “Last Updated 01/02/2026”; day/month order is not stated.",
+      "url": "https://delhitourism.gov.in/entertainment/purana_quila_museum.html",
+      "lastVerified": "2026-11-03",
+      "verification": "Re-fetched 2026-11-03 at this URL; page title recorded as served; “Friday” and the footer date “01/02/2026” still present."
+    }
+  ],
+  "shortCiteRule": "Surnames for an authored paper; publisher for news and government pages; year added only to distinguish two entries from one publisher."
+}
