@@ -1,0 +1,10 @@
+const fs=require('node:fs'),path=require('node:path');
+const root=path.resolve(__dirname,'../..'),base=path.join(root,'output/lookdev/features'),source=path.join(base,process.argv[2]),target=path.join(base,process.argv[3]);
+if(fs.existsSync(target))throw new Error('New unreviewed target folder required');
+const rerender=process.argv.length>4?process.argv.slice(4):['contact','mudbrick-wall-2160','hero-mud-2160','fig13-plan'];
+const omit=new Set(rerender.flatMap(name=>[name+'.png',name.replace(/-2160$/,'-1080')+'.png',name.replace(/-2160$/,'-400percent')+'.png']));
+if(rerender.includes('brick-wall-2160'))omit.add('brick-repeat-2160.png');
+fs.mkdirSync(target,{recursive:true});
+for(const name of fs.readdirSync(source))if(name.endsWith('.png')&&!omit.has(name)&&fs.statSync(path.join(source,name)).isFile())fs.copyFileSync(path.join(source,name),path.join(target,name));
+const stats=JSON.parse(fs.readFileSync(path.join(source,'capture-stats.json'),'utf8'));for(const key of rerender)delete stats[key];
+fs.writeFileSync(path.join(target,'capture-stats.json'),JSON.stringify(stats,null,2));console.log('Prepared changed views '+rerender.join(', ')+' in '+target);
