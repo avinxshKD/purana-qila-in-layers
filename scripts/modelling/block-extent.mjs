@@ -1,0 +1,13 @@
+import { LOOK_PROPORTIONS, surfaceHeight } from '../../src/layers.js';
+import { siteBoundaryGrids } from '../../src/eras/site-state.js';
+import { SEATING } from '../../src/eras/seating.js';
+import { VOLUMES } from '../../src/eras/excavation.js';
+const s = siteBoundaryGrids();
+let mn = Infinity, mx = -Infinity; for (const v of s.grids[0]) mn = Math.min(mn, v); for (const v of s.grids[10]) mx = Math.max(mx, v);
+console.log('old bottomDepth', LOOK_PROPORTIONS.bottomDepth, 'old depth', LOOK_PROPORTIONS.depth, 'old fadeStart', LOOK_PROPORTIONS.fadeStartDepth);
+console.log('silt top min', mn, 'block bottom', mn - 1.2, 'top max', mx);
+console.log('ring', SEATING.ring.topY, SEATING.ring.bottomY, SEATING.ring.pitFloorY);
+for (const t of SEATING.trenches) console.log(t.id, t.plane, t.floorAt(t.xmin,t.zmin), t.floorAt(t.xmax,t.zmax));
+for (const v of VOLUMES) console.log(v.id, JSON.stringify(v.box), v.depthRange.toFixed(2), JSON.stringify(v.batterDegrees));
+console.log('deepest', SEATING.deepestCut);
+console.log('pit', SEATING.pit.floorPlane);
