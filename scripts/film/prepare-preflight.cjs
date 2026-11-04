@@ -1,0 +1,22 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),{spawnSync}=require('node:child_process');
+const {root}=require('../browser.cjs'),{sha256}=require('../media.cjs');
+const args=process.argv.slice(2),get=key=>{const i=args.indexOf(key);return i<0?undefined:args[i+1];};
+const backend=get('--backend')||'a3';if(!['a3','m1'].includes(backend))throw new Error('Unknown preflight backend');
+const revision=get('--revision')||(backend==='m1'?'r2':'r1b');if(!/^[a-z0-9-]+$/.test(revision))throw new Error('Invalid preflight revision');
+const corrected=backend==='m1'&&revision!=='r2';
+const out=path.resolve(get('--out')||path.join(root,'output','film','f2','preflight-a3-r1b'));
+const base=path.resolve(get('--scene-source')||(backend==='m1'?root:path.join(root,'output','film','f1-a3','source'))),source=path.join(out,'source');
+if(fs.existsSync(source))throw new Error('Preserve frozen preflight source; use a new delivery folder');
+if(!fs.existsSync(path.join(base,'src','museum-scene.js')))throw new Error('Scene source missing');
+fs.mkdirSync(source,{recursive:true});
+fs.cpSync(path.join(base,'src'),path.join(source,'src'),{recursive:true});
+fs.cpSync(path.join(root,'src','film'),path.join(source,'src','film'),{recursive:true});
+for(const folder of ['reference','public'])fs.cpSync(path.join(root,folder),path.join(source,folder),{recursive:true});
+for(const file of ['film.html','package.json','package-lock.json'])fs.copyFileSync(path.join(root,file),path.join(source,file));
+const files={};
+function walk(folder){for(const entry of fs.readdirSync(folder,{withFileTypes:true}).sort((a,b)=>a.name.localeCompare(b.name))){const file=path.join(folder,entry.name);if(entry.isDirectory())walk(file);else files[path.relative(source,file).replaceAll('\\','/')]=sha256(fs.readFileSync(file));}}
+walk(source);
+fs.writeFileSync(path.join(out,'source-inputs.json'),JSON.stringify({backend,revision,integrationOnly:backend==='m1',baseSceneSource:base,filmOverlaySource:path.join(root,'src','film'),description:corrected?`M1 ${revision} candidate frozen for corrected-look, anchor and framing review; acceptance and full render pending.`:backend==='m1'?'Current M1 frozen for F2 integration only; era-top look acceptance pending.':'Accepted A3 scene source plus owned F2 film modules; current research/static inputs. No live M1 geometry.',sha256:sha256(JSON.stringify(files)),files},null,2)+'\n');
+const result=spawnSync(process.execPath,[path.join(__dirname,'snapshot.cjs'),'--source',source,'--out',out,'--frozen-source','--description',backend==='m1'?`F2 M1 ${revision} review candidate; not look acceptance or render authorization`:'F2 A3 preflight snapshot',...(backend==='a3'?['--archive',path.join(root,'output','lookdev','round6','stage-a3','work','source-a3.zip')]:[])],{cwd:root,stdio:'inherit'});
+if(result.status!==0)process.exit(result.status||1);
