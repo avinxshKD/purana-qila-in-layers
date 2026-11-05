@@ -1,0 +1,3453 @@
+{
+  "schemaVersion": 1,
+  "builtOn": "2026-11-03",
+  "scope": "Composite section, not one geolocated cut. Layers top to bottom.",
+  "sources": {
+    "P1": {
+      "title": "Swarnkar and Bal, Heritage 11.1 (2023–24), pp.351–370",
+      "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+      "originalURL": "https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+      "fetchedTextURL": "https://www.academia.edu/128211361/A_Comprehensive_Picture_of_Delhis_Archaeology_Through_Excavations_at_Purana_Qila"
+    },
+    "P2": {
+      "title": "Ministry of Culture/PIB, 30 May 2023",
+      "url": "https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=1928410"
+    },
+    "N24": {
+      "title": "Adrija Roychowdhury, Indian Express, June 2024 (updated 8 June)",
+      "url": "https://indianexpress.com/article/long-reads/indraprastha-can-excavations-at-purana-qila-find-its-mahabharata-link-9364812/"
+    }
+  },
+  "inputs": [
+    "purana-qila-facts.md sections C, D, E, G, H and Addenda 1–6",
+    "purana-qila/fig13-walls.json",
+    "film-callouts.json",
+    "site-drawers.json"
+  ],
+  "geometryStatusLegend": {
+    "traced from a figure": "polygon/centreline in fig13-walls.json (local Fig.13 metres)",
+    "described only": "source text only; any placement is schematic",
+    "schematic": "deposit or indicator with no surveyed geometry",
+    "caption only": "text in the film, no geometry"
+  },
+  "yearConvention": "startYear/endYear are historical years, BCE negative, with no year 0 (540 BCE = -540). astronomicalStart/astronomicalEnd use astronomical numbering with a year 0 (540 BCE = -539, 1 BCE = 0, 1 CE = 1); the film and site timelines use these. Layers without a Table 1 period have null years.",
+  "dashRule": "Unspaced en dash when only the end carries the suffix; spaced en dash when both sides do.",
+  "wallsSHA256": "54aeaf0bac05759e3a80be88971286acdfb2dcdd4f627face707559d58064d75",
+  "globalMustNotShow": [
+    "No religious identification, roofs or people (film rules).",
+    "No epic-city identification, title, era or location pin; the Indraprastha line belongs on the About page only (H).",
+    "The cutaway does not represent excavation beneath the Kunti Devi temple; keep its footprint and a margin out (H).",
+    "Religious finds stay out of the hero scene; P1 gives period contexts, not trench coordinates (H)."
+  ],
+  "palette": {
+    "G-fig02": {
+      "reference": "P1 Fig.2, P1-fig02-excavation-overview.png",
+      "observed": "Dusty tan/grey-brown soil; warmer orange/reddish brick edges; irregular buff/grey rubble; faint pale floor patches",
+      "anchor": {
+        "sourceId": "P1",
+        "page": 353,
+        "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+        "text": "General View of Excavated Remains, Purana Qila"
+      },
+      "scope": "general exposed remains; periods not identified in the photograph"
+    },
+    "G-fig14-15": {
+      "reference": "P1 Figs.14–15",
+      "observed": "Muted orange-red bricks under tan dust; grey-beige flat floor remains; darker trench shadows; patchy, not uniformly clean masonry",
+      "anchor": {
+        "sourceId": "P1",
+        "page": 363,
+        "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+        "text": "Remains of House - Kushan Period"
+      },
+      "scope": "Kushan brick structures"
+    },
+    "G-fig07-pib-well": {
+      "reference": "P1 Fig.7 and PIB well photo",
+      "observed": "Earth-brown terracotta rings; rounded/protruding ring edges, pale adhering soil, darker recessed gaps",
+      "anchor": {
+        "sourceId": "P1",
+        "page": 358,
+        "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+        "text": "Terracotta Ring Well"
+      },
+      "scope": "Mauryan ring well"
+    },
+    "G-pib-trenches": {
+      "reference": "PIB trench photographs",
+      "observed": "Broad grey-tan earth surfaces and steep dusty cut faces; narrow preserved earth divisions; deeper pits very dark in shadow",
+      "anchor": {
+        "sourceId": "P2",
+        "page": "web release, unpaginated",
+        "url": "https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=1928410",
+        "text": "General view of Excavation Trenches",
+        "verification": "caption read in the earlier research pass"
+      },
+      "scope": "general trench earth; periods not identified in the photograph"
+    },
+    "G-fig13": {
+      "reference": "P1 Fig.13",
+      "observed": "Beige ground, orange-highlighted brick courses, grey masonry symbols, blue-filled ring-well symbol",
+      "anchor": {
+        "sourceId": "P1",
+        "page": "361, Fig.13",
+        "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+        "text": "Drawing of House Complex, Kushana Period",
+        "verification": "read from verified Fig.13 raster"
+      },
+      "scope": "drawing convention only, not ancient colour"
+    },
+    "G-fig04": {
+      "reference": "P1 Fig.4",
+      "observed": "Monochrome linework and hatch/stipple bands, not a colour chart",
+      "anchor": {
+        "sourceId": "P1",
+        "page": 354,
+        "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+        "text": "Section drawing of the excavated trenches"
+      },
+      "scope": "no colour information; applies to no layer"
+    }
+  },
+  "generalPalette": [
+    "G-fig02",
+    "G-pib-trenches"
+  ],
+  "depthFindings": {
+    "perPeriodThickness": {
+      "result": "not found",
+      "note": "No source gives a thickness or depth for any period. Set schematic thicknesses and label them “schematic, not surveyed”."
+    },
+    "fig4Gate": {
+      "result": "not found",
+      "evidence": [
+        {
+          "sourceId": "P1",
+          "page": 354,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "Section drawing of the excavated trenches"
+        }
+      ],
+      "note": "Addendum 2 stop: Fig.4 scale numerals and depth annotations are illegible; no metre-valued profile."
+    },
+    "belowPegDepths": {
+      "result": "not found",
+      "evidence": [
+        {
+          "sourceId": "P1",
+          "page": "361, Fig.13",
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "DEPTH FROM BELOW PEG",
+          "verification": "read from verified Fig.13 raster"
+        }
+      ],
+      "note": "Fig.13 prints the convention, but no value is safely tied to a wall or period; 28 of 28 Fig.13 features have belowPegDepthMetres null."
+    },
+    "maxExcavated14m": {
+      "result": "found",
+      "perPeriod": false,
+      "metres": 14,
+      "evidence": [
+        {
+          "sourceId": "P1",
+          "page": 356,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "towards the slope area of the mound is almost 14m"
+        }
+      ],
+      "note": "Approximate cumulative maximum toward the slope; not per period and not every pit."
+    },
+    "boring16to17m": {
+      "result": "found",
+      "perPeriod": false,
+      "metres": [
+        16,
+        17
+      ],
+      "evidence": [
+        {
+          "sourceId": "P1",
+          "page": 356,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "Through cylindrical boring"
+        },
+        {
+          "sourceId": "P1",
+          "page": 356,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "continuing till approximately 16-17m"
+        }
+      ],
+      "note": "Cultural deposit in a boring; not exposed cut and not per period."
+    },
+    "otherFiguresNotPerPeriod": [
+      {
+        "metres": 5.5,
+        "evidence": {
+          "sourceId": "P2",
+          "page": "web release, unpaginated",
+          "url": "https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=1928410",
+          "text": "with a depth of 5.50 meters reached thus far",
+          "verification": "from facts sheet section C; fetched in the earlier research pass, not re-fetched for this pack"
+        },
+        "note": "Dated 2023 progress depth; not a new maximum."
+      },
+      {
+        "metres": 6.5,
+        "evidence": {
+          "sourceId": "N24",
+          "page": "web article, unpaginated",
+          "url": "https://indianexpress.com/article/long-reads/indraprastha-can-excavations-at-purana-qila-find-its-mahabharata-link-9364812/",
+          "text": "the team has already dug up around 6.5 metres",
+          "verification": "from facts sheet section C; fetched in the earlier research pass, not re-fetched for this pack"
+        },
+        "note": "Central temple-area trench by June 2024; not the slope."
+      },
+      {
+        "metres": 2.2,
+        "evidence": {
+          "sourceId": "P1",
+          "page": 357,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "The ring well has an approximate depth of about 2.20m."
+        },
+        "note": "Ring-well feature depth, not a layer thickness."
+      },
+      {
+        "metres": 11,
+        "evidence": {
+          "sourceId": "P1",
+          "page": 351,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "The mound has an average minimum height of about 11 m."
+        },
+        "note": "Mound relief, not deposit thickness."
+      },
+      {
+        "metres": 7.5,
+        "evidence": {
+          "sourceId": "P1",
+          "page": 355,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "about 7.50m slope"
+        },
+        "note": "Slope with no rise, run or angle given."
+      }
+    ]
+  },
+  "problemCases": {
+    "fig13-mixed-periods": "Fig.13 is captioned Kushana but combines Q-14 (2014) and Q-15 (2023) frames, stone and mudbrick symbols, a ring well and a tile drain. Per-feature periods are not stated.",
+    "fig13-stone-period-unassigned": "Stone symbols on Fig.13 have no period of their own; the Kushan link is caption-level only.",
+    "fig13-campus-position": "Q-14/Q-15 campus position is unresolved; the plan is a local-coordinate inset, not a geolocated cut.",
+    "fig13-B10-trench-tag": "fig13-walls.json tags B10-Q15-northwest-wall-1 as Q-14/2014 while its annotation says “Q-15 extension”. Walls are hash-locked, so the record is unchanged; treat its trench as unresolved.",
+    "two-drains": "Two drains: the P1 Mauryan text drain (sealing floor of the Mauryan period) and the Fig.13 “TERRACOTTA TILES DRAIN” on the Kushan plan. Identity is unproven; model one only.",
+    "two-ring-wells": "Two ring wells: the P1 Mauryan text well (Fig.7, PIB photo) and the Fig.13 “RING WELL”. Identity is unproven; model one only.",
+    "ring-well-arithmetic": "18 rings × mean 0.15 m = 2.70 m, but the reported depth is about 2.20 m.",
+    "ring-well-cuts-older-layers": "The Mauryan ring well cuts into Pre-Mauryan levels; it must not float inside a Mauryan slab.",
+    "lane-spans-two-layers": "The pottery-and-earth lane belongs to both Sunga and Kushan periods.",
+    "dimension-axes-unlabelled": "P1 gives “AxBxC” dimensions without naming axes; length × width × height is a reading, not stated.",
+    "gupta-two-exposures": "Two floor exposures, not necessarily two separate floors.",
+    "mughal-finds-near-sultanate": "Some Mughal pieces were collected near late Sultanate structures; finds are not tied to one level.",
+    "silt-vs-n24-fluvial": "P1 places silt below Pre-Mauryan levels; N24 reports PGW below a yellow fluvial deposit. These may be different exposures.",
+    "temple-adjacency": "Central temple-area evidence is not part of the slope composite.",
+    "depth-gate": "Use only if the model's deepest cut matches."
+  },
+  "layers": [
+    {
+      "order": 1,
+      "id": "modern-fill",
+      "label": "Modern fill",
+      "table1": null,
+      "dateNote": "Not a Table 1 period. No date range is source-supported; 1948 and 1955 date objects only.",
+      "deposit": [
+        {
+          "sourceId": "P1",
+          "page": 355,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "On the slope area"
+        },
+        {
+          "sourceId": "P1",
+          "page": 355,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "yellowish loose soil and bands of ash"
+        },
+        {
+          "sourceId": "P1",
+          "page": 355,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "visible in gradient and an uneven manner"
+        },
+        {
+          "sourceId": "P1",
+          "page": 355,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "bricks of 1948CE, fragments of china clay pottery of 1955CE"
+        }
+      ],
+      "colour": {
+        "value": "yellowish",
+        "evidence": {
+          "sourceId": "P1",
+          "page": 355,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "yellowish loose soil and bands of ash"
+        }
+      },
+      "texture": {
+        "value": "loose soil with bands of ash, in gradient and uneven",
+        "evidence": [
+          {
+            "sourceId": "P1",
+            "page": 355,
+            "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+            "text": "yellowish loose soil and bands of ash"
+          },
+          {
+            "sourceId": "P1",
+            "page": 355,
+            "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+            "text": "visible in gradient and an uneven manner"
+          }
+        ]
+      },
+      "palette": [
+        "G-fig02",
+        "G-pib-trenches"
+      ],
+      "features": [
+        {
+          "id": "modern-fill",
+          "title": "Mixed modern fill",
+          "era": "Modern fill; no assigned date range",
+          "geometryStatus": "schematic",
+          "sourceRefs": {
+            "siteDrawer": "modern-fill",
+            "fig13": null,
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 355,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "yellowish loose soil and bands of ash"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ]
+        },
+        {
+          "id": "modern-brick-1948",
+          "title": "Brick dated 1948",
+          "era": "Modern fill; object date 1948 CE",
+          "geometryStatus": "described only",
+          "sourceRefs": {
+            "siteDrawer": "modern-brick-1948",
+            "fig13": null,
+            "filmCallouts": [
+              "modern-1948"
+            ]
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 355,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "bricks of 1948CE"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ]
+        },
+        {
+          "id": "modern-china-1955",
+          "title": "China clay fragments dated 1955",
+          "era": "Modern fill; object date 1955 CE",
+          "geometryStatus": "described only",
+          "sourceRefs": {
+            "siteDrawer": "modern-china-1955",
+            "fig13": null,
+            "filmCallouts": [
+              "modern-1955"
+            ]
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 355,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "fragments of china clay pottery of 1955CE"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ]
+        },
+        {
+          "id": "modern-central-rubble-wall",
+          "title": "Post-Partition rubble and brickbat walled structure, central area",
+          "era": "Most recent period; post-Partition attribution is possible only",
+          "geometryStatus": "described only",
+          "sourceRefs": {
+            "siteDrawer": null,
+            "fig13": null,
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 354,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "A specific area near the Shri Mata Kunti Devi temple was excavated"
+            },
+            {
+              "sourceId": "P1",
+              "page": 354,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Excavations at the topmost layer in this area have exposed a walled structure built of rubble stone and"
+            },
+            {
+              "sourceId": "P1",
+              "page": 355,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "brick-bats with mud mortar of the most recent period, possibly by the populace who settled there after partition"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F",
+            "I"
+          ],
+          "problemFlags": [
+            "temple-adjacency"
+          ],
+          "modelRecommendation": "Exclude from the composite section: P1 places it in the central area near the temple, not on the slope sequence."
+        }
+      ],
+      "mustNotShow": [
+        "Neutral modern-context layer; attribution to post-Partition residents is probable, not certain (H).",
+        "No removal animation, identity assignment, named families, or implication that recent residents damaged ancient strata (H).",
+        "The cutaway does not represent excavation beneath the Kunti Devi temple; keep its footprint and a margin out (H).",
+        "1948 and 1955 date objects, not the start or end of the fill (C)."
+      ],
+      "years": {
+        "startYear": null,
+        "endYear": null,
+        "astronomicalStart": null,
+        "astronomicalEnd": null
+      },
+      "layerGeometryStatus": "schematic",
+      "thickness": {
+        "metres": null,
+        "status": "No per-period thickness found; use schematic thickness labelled \"schematic, not surveyed\"."
+      }
+    },
+    {
+      "order": 2,
+      "id": "mughal",
+      "displayLabel": "Mughal, 1600–1800 CE",
+      "table1": {
+        "evidence": {
+          "sourceId": "P1",
+          "page": 354,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "Mughal Period 1600 CE – 1800 CE"
+        },
+        "startYear": 1600,
+        "endYear": 1800,
+        "astronomicalStart": 1600,
+        "astronomicalEnd": 1800,
+        "display": "1600–1800 CE",
+        "note": "Table 1 leaves 1500–1600 CE unassigned; keep the gap visible."
+      },
+      "deposit": [
+        {
+          "sourceId": "P1",
+          "page": 356,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "a light greyish loose earth mixed with debris of lime floor plasters"
+        },
+        {
+          "sourceId": "P1",
+          "page": 356,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "found deposited on slopes, consisting mainly of Mughal period material"
+        },
+        {
+          "sourceId": "P1",
+          "page": 369,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "The topmost deposits/ layers have yielded a few Mughal period materials"
+        }
+      ],
+      "colour": {
+        "value": "light greyish",
+        "evidence": {
+          "sourceId": "P1",
+          "page": 356,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "a light greyish loose earth mixed with debris of lime floor plasters"
+        }
+      },
+      "texture": {
+        "value": "loose earth mixed with lime-floor plaster debris",
+        "evidence": [
+          {
+            "sourceId": "P1",
+            "page": 356,
+            "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+            "text": "a light greyish loose earth mixed with debris of lime floor plasters"
+          }
+        ]
+      },
+      "palette": [
+        "G-fig02",
+        "G-pib-trenches"
+      ],
+      "features": [
+        {
+          "id": "mughal-deposit",
+          "title": "Grey loose deposit with plaster debris",
+          "era": "Mughal-context deposit, 1600–1800 CE",
+          "geometryStatus": "schematic",
+          "sourceRefs": {
+            "siteDrawer": "mughal-deposit",
+            "fig13": null,
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 356,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "a light greyish loose earth mixed with debris of lime floor plasters"
+            },
+            {
+              "sourceId": "P1",
+              "page": 356,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "consisting mainly of Mughal period material"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ]
+        },
+        {
+          "id": "mughal-porcelain",
+          "title": "Blue-and-white porcelain fragments",
+          "era": "Mughal, 1600–1800 CE",
+          "geometryStatus": "described only",
+          "sourceRefs": {
+            "siteDrawer": "mughal-porcelain",
+            "fig13": null,
+            "filmCallouts": [
+              "mughal-porcelain"
+            ]
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 369,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Porcelain Ware pottery of blue and white"
+            },
+            {
+              "sourceId": "P1",
+              "page": 369,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "A few of these tiny pieces were collected near the late Sultanate period level structures."
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "mughal-finds-near-sultanate"
+          ]
+        },
+        {
+          "id": "mughal-glass",
+          "title": "Green bottle fragments",
+          "era": "Mughal, 1600–1800 CE",
+          "geometryStatus": "described only",
+          "sourceRefs": {
+            "siteDrawer": "mughal-glass",
+            "fig13": null,
+            "filmCallouts": [
+              "mughal-glass"
+            ]
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 369,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "base and neck fragments of the green glass bottles"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ]
+        }
+      ],
+      "mustNotShow": [
+        "No excavated Mughal palace or building inferred from porcelain (D).",
+        "Religious finds stay out of the hero scene; P1 gives period contexts, not trench coordinates (H). Mughal assemblage: small stone Ganesha.",
+        "Do not shift the Mughal start to 1526 or 1533 to hide the Table 1 gap (F)."
+      ],
+      "years": {
+        "startYear": 1600,
+        "endYear": 1800,
+        "astronomicalStart": 1600,
+        "astronomicalEnd": 1800
+      },
+      "layerGeometryStatus": "schematic",
+      "thickness": {
+        "metres": null,
+        "status": "No per-period thickness found; use schematic thickness labelled \"schematic, not surveyed\"."
+      }
+    },
+    {
+      "order": 3,
+      "id": "sultanate",
+      "displayLabel": "Sultanate, 1200–1500 CE",
+      "table1": {
+        "evidence": {
+          "sourceId": "P1",
+          "page": 354,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "Sultanate Period 1200 CE – 1500 CE"
+        },
+        "startYear": 1200,
+        "endYear": 1500,
+        "astronomicalStart": 1200,
+        "astronomicalEnd": 1500,
+        "display": "1200–1500 CE",
+        "note": null
+      },
+      "deposit": [
+        {
+          "sourceId": "P1",
+          "page": 356,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "The layer below this seals the structures of the Sultanate Period."
+        }
+      ],
+      "colour": null,
+      "texture": null,
+      "colourNote": "P1 gives no colour or texture for the sealing layer; lime floors are a feature material.",
+      "palette": [
+        "G-fig02",
+        "G-pib-trenches"
+      ],
+      "features": [
+        {
+          "id": "sultanate-corner",
+          "title": "Rubble-stone room corner",
+          "era": "Sultanate, 1200–1500 CE",
+          "geometryStatus": "described only",
+          "sourceRefs": {
+            "siteDrawer": "sultanate-corner",
+            "fig13": null,
+            "filmCallouts": [
+              "sultanate-corner"
+            ]
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 368,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "3.75x0.75m and 1.80x0.75m respectively"
+            },
+            {
+              "sourceId": "P1",
+              "page": 368,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "east-west, turning towards south, at a right-angle"
+            }
+          ],
+          "sourcedSize": [
+            {
+              "quoted": "3.75x0.75m and 1.80x0.75m respectively",
+              "unitsAsQuoted": "metres (m)",
+              "metres": [
+                [
+                  3.75,
+                  0.75
+                ],
+                [
+                  1.8,
+                  0.75
+                ]
+              ],
+              "note": null,
+              "evidence": {
+                "sourceId": "P1",
+                "page": 368,
+                "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+                "text": "3.75x0.75m and 1.80x0.75m respectively"
+              }
+            }
+          ],
+          "sourcedDepth": null,
+          "courses": 3,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ]
+        },
+        {
+          "id": "sultanate-lime-floor",
+          "title": "Lime floor traces",
+          "era": "Sultanate, 1200–1500 CE",
+          "geometryStatus": "described only",
+          "sourceRefs": {
+            "siteDrawer": "sultanate-lime-floor",
+            "fig13": null,
+            "filmCallouts": [
+              "sultanate-floor"
+            ]
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 368,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Traces of lime floors at two places"
+            },
+            {
+              "sourceId": "P1",
+              "page": 368,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Traces of lime floors at two places, also of phase II, have been unearthed."
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ]
+        },
+        {
+          "id": "sultanate-parallel-wall",
+          "title": "Parallel rubble-stone wall, another quadrant",
+          "era": "Sultanate phase II",
+          "geometryStatus": "described only",
+          "sourceRefs": {
+            "siteDrawer": null,
+            "fig13": null,
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 368,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Parallel to the latter, another wall was exposed, up to 5 courses, in another quadrant."
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": 5,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ]
+        },
+        {
+          "id": "sultanate-phase1-wall",
+          "title": "North–south rubble wall with mud mortar",
+          "era": "Sultanate phase I",
+          "geometryStatus": "described only",
+          "sourceRefs": {
+            "siteDrawer": null,
+            "fig13": null,
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 368,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Below this is a stone rubble wall built with mud mortar, in the direction of north-south of phase I of this Period."
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ]
+        }
+      ],
+      "mustNotShow": [
+        "No mosque, palace or madrasa from these walls alone (D).",
+        "Religious finds stay out of the hero scene; P1 gives period contexts, not trench coordinates (H). Rajput–Sultanate transitional layers: Ganesha figurine.",
+        "Lime traces are not an intact bright-white floor everywhere (G)."
+      ],
+      "years": {
+        "startYear": 1200,
+        "endYear": 1500,
+        "astronomicalStart": 1200,
+        "astronomicalEnd": 1500
+      },
+      "layerGeometryStatus": "schematic",
+      "thickness": {
+        "metres": null,
+        "status": "No per-period thickness found; use schematic thickness labelled \"schematic, not surveyed\"."
+      }
+    },
+    {
+      "order": 4,
+      "id": "rajput",
+      "displayLabel": "Rajput, 600–1200 CE",
+      "table1": {
+        "evidence": {
+          "sourceId": "P1",
+          "page": 354,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "Rajput Period 600 CE - 1200 CE"
+        },
+        "startYear": 600,
+        "endYear": 1200,
+        "astronomicalStart": 600,
+        "astronomicalEnd": 1200,
+        "display": "600–1200 CE",
+        "note": "Table 1 prints a hyphen; display uses the en-dash rule."
+      },
+      "deposit": [
+        {
+          "sourceId": "P1",
+          "page": 356,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "Below these layers are successive structures of the Rajput, Post-Gupta, Gupta, Kushan, Sunga, and Mauryan Periods in the adjoining excavated areas."
+        },
+        {
+          "sourceId": "P1",
+          "page": 367,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "a skeleton of a goat was exposed in a pit sealed by the layers of the Rajput period"
+        }
+      ],
+      "colour": null,
+      "texture": null,
+      "colourNote": "No deposit colour or texture stated for Rajput layers.",
+      "palette": [
+        "G-fig02",
+        "G-pib-trenches"
+      ],
+      "features": [
+        {
+          "id": "rajput-wall",
+          "title": "Semi-dressed stone wall",
+          "era": "Rajput, 600–1200 CE",
+          "geometryStatus": "described only",
+          "sourceRefs": {
+            "siteDrawer": "rajput-wall",
+            "fig13": null,
+            "filmCallouts": [
+              "rajput-width"
+            ]
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 367,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "stone wall of semi-dressed stones of dimensions 4.40mx1.40mx1m"
+            },
+            {
+              "sourceId": "P1",
+              "page": 367,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "a possible fortification wall with a guard cell"
+            }
+          ],
+          "sourcedSize": [
+            {
+              "quoted": "stone wall of semi-dressed stones of dimensions 4.40mx1.40mx1m",
+              "unitsAsQuoted": "metres (m)",
+              "metres": [
+                4.4,
+                1.4,
+                1
+              ],
+              "note": null,
+              "evidence": {
+                "sourceId": "P1",
+                "page": 367,
+                "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+                "text": "stone wall of semi-dressed stones of dimensions 4.40mx1.40mx1m"
+              }
+            }
+          ],
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F",
+            "I"
+          ],
+          "problemFlags": [
+            "dimension-axes-unlabelled"
+          ]
+        },
+        {
+          "id": "rajput-postholes",
+          "title": "Two broad post-holes",
+          "era": "Rajput, 600–1200 CE",
+          "geometryStatus": "described only",
+          "sourceRefs": {
+            "siteDrawer": "rajput-postholes",
+            "fig13": null,
+            "filmCallouts": [
+              "rajput-holes"
+            ]
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 367,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "two broad post-holes"
+            },
+            {
+              "sourceId": "P1",
+              "page": 367,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "probably for supporting a superstructure"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F",
+            "I"
+          ]
+        },
+        {
+          "id": "rajput-rubble",
+          "title": "Three rubble-wall phases",
+          "era": "Rajput, 600–1200 CE",
+          "geometryStatus": "described only",
+          "sourceRefs": {
+            "siteDrawer": "rajput-rubble",
+            "fig13": null,
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 367,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Three successive random rubble masonry walls of phases I, II, and, III"
+            },
+            {
+              "sourceId": "P1",
+              "page": 367,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "have been exposed towards the slope"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ]
+        },
+        {
+          "id": "rajput-sealed-pit",
+          "title": "Pit sealed by Rajput layers",
+          "era": "Sealed by Rajput layers, 600–1200 CE; pit date unknown",
+          "geometryStatus": "described only",
+          "sourceRefs": {
+            "siteDrawer": "rajput-sealed-pit",
+            "fig13": null,
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 367,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "a skeleton of a goat was exposed in a pit sealed by the layers of the Rajput period"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "modelRecommendation": "Pit cut only: no skeleton and no ritual reading."
+        },
+        {
+          "id": "rajput-pottery-dump",
+          "title": "Pottery dump",
+          "era": "Rajput, 600–1200 CE",
+          "geometryStatus": "described only",
+          "sourceRefs": {
+            "siteDrawer": "rajput-pottery-dump",
+            "fig13": null,
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 367,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "In the direction of east to these walls, a huge dump was unearthed"
+            },
+            {
+              "sourceId": "P1",
+              "page": 367,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "an enormous quantity of the representative pottery"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "modelRecommendation": "Sherd-rich lens east of the rubble walls; no dimensions."
+        }
+      ],
+      "mustNotShow": [
+        "No complete battlements, guards, posts or superstructure; fortification is an interpretation (D).",
+        "The goat pit is not a sacrifice (C).",
+        "Religious finds stay out of the hero scene; P1 gives period contexts, not trench coordinates (H). Rajput assemblage: small sandstone Vishnu; standing Vaikuntha Vishnu (material conflict terracotta/stone)."
+      ],
+      "years": {
+        "startYear": 600,
+        "endYear": 1200,
+        "astronomicalStart": 600,
+        "astronomicalEnd": 1200
+      },
+      "layerGeometryStatus": "schematic",
+      "thickness": {
+        "metres": null,
+        "status": "No per-period thickness found; use schematic thickness labelled \"schematic, not surveyed\"."
+      }
+    },
+    {
+      "order": 5,
+      "id": "post-gupta",
+      "displayLabel": "Post-Gupta, 400–600 CE",
+      "table1": {
+        "evidence": {
+          "sourceId": "P1",
+          "page": 354,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "Post Gupta Period 400 CE – 600 CE"
+        },
+        "startYear": 400,
+        "endYear": 600,
+        "astronomicalStart": 400,
+        "astronomicalEnd": 600,
+        "display": "400–600 CE",
+        "note": null
+      },
+      "deposit": [
+        {
+          "sourceId": "P1",
+          "page": 356,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "Below these layers are successive structures of the Rajput, Post-Gupta, Gupta, Kushan, Sunga, and Mauryan Periods in the adjoining excavated areas."
+        }
+      ],
+      "colour": null,
+      "texture": null,
+      "colourNote": "No deposit colour or texture stated.",
+      "palette": [
+        "G-fig02",
+        "G-pib-trenches"
+      ],
+      "features": [
+        {
+          "id": "post-gupta-wall-ns",
+          "title": "North–south brickbat wall",
+          "era": "Post-Gupta, 400–600 CE",
+          "geometryStatus": "described only",
+          "sourceRefs": {
+            "siteDrawer": "post-gupta-wall-ns",
+            "fig13": null,
+            "filmCallouts": [
+              "post-ns"
+            ]
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 366,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "a wall running north-south, measuring 2.04x0.40x0.10meter made of brick-bats"
+            },
+            {
+              "sourceId": "P1",
+              "page": 366,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "This wall may have belonged to a potter’s house"
+            }
+          ],
+          "sourcedSize": [
+            {
+              "quoted": "a wall running north-south, measuring 2.04x0.40x0.10meter made of brick-bats",
+              "unitsAsQuoted": "metres (m)",
+              "metres": [
+                2.04,
+                0.4,
+                0.1
+              ],
+              "note": null,
+              "evidence": {
+                "sourceId": "P1",
+                "page": 366,
+                "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+                "text": "a wall running north-south, measuring 2.04x0.40x0.10meter made of brick-bats"
+              }
+            }
+          ],
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F",
+            "I"
+          ],
+          "problemFlags": [
+            "dimension-axes-unlabelled"
+          ]
+        },
+        {
+          "id": "post-gupta-wall-ew",
+          "title": "East–west brickbat wall",
+          "era": "Post-Gupta, 400–600 CE",
+          "geometryStatus": "described only",
+          "sourceRefs": {
+            "siteDrawer": "post-gupta-wall-ew",
+            "fig13": null,
+            "filmCallouts": [
+              "post-ew"
+            ]
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 366,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Another wall of dimensions 3.50x0.40m made of brick-bats"
+            },
+            {
+              "sourceId": "P1",
+              "page": 366,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "traced in the direction of east-west"
+            }
+          ],
+          "sourcedSize": [
+            {
+              "quoted": "Another wall of dimensions 3.50x0.40m made of brick-bats",
+              "unitsAsQuoted": "metres (m)",
+              "metres": [
+                3.5,
+                0.4
+              ],
+              "note": null,
+              "evidence": {
+                "sourceId": "P1",
+                "page": 366,
+                "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+                "text": "Another wall of dimensions 3.50x0.40m made of brick-bats"
+              }
+            }
+          ],
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ]
+        }
+      ],
+      "mustNotShow": [
+        "Possible potter’s house only; never “pottery workshop”, and no kiln (D).",
+        "Keep the two phased walls separate; do not invent the east–west wall height (D)."
+      ],
+      "years": {
+        "startYear": 400,
+        "endYear": 600,
+        "astronomicalStart": 400,
+        "astronomicalEnd": 600
+      },
+      "layerGeometryStatus": "schematic",
+      "thickness": {
+        "metres": null,
+        "status": "No per-period thickness found; use schematic thickness labelled \"schematic, not surveyed\"."
+      }
+    },
+    {
+      "order": 6,
+      "id": "gupta",
+      "displayLabel": "Gupta, 200–400 CE",
+      "table1": {
+        "evidence": {
+          "sourceId": "P1",
+          "page": 354,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "Gupta Period 200 CE – 400 CE"
+        },
+        "startYear": 200,
+        "endYear": 400,
+        "astronomicalStart": 200,
+        "astronomicalEnd": 400,
+        "display": "200–400 CE",
+        "note": null
+      },
+      "deposit": [
+        {
+          "sourceId": "P1",
+          "page": 356,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "Below these layers are successive structures of the Rajput, Post-Gupta, Gupta, Kushan, Sunga, and Mauryan Periods in the adjoining excavated areas."
+        }
+      ],
+      "colour": null,
+      "texture": null,
+      "colourNote": "No deposit colour or texture stated; brick-jelly floors are a feature material.",
+      "palette": [
+        "G-fig02",
+        "G-pib-trenches"
+      ],
+      "features": [
+        {
+          "id": "gupta-floor",
+          "title": "Brick-jelly floor traces",
+          "era": "Gupta, 200–400 CE",
+          "geometryStatus": "described only",
+          "sourceRefs": {
+            "siteDrawer": "gupta-floor",
+            "fig13": null,
+            "filmCallouts": [
+              "gupta-floors"
+            ]
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 364,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "burnt bricks for the construction of structures and brick-jelly floors"
+            },
+            {
+              "sourceId": "P1",
+              "page": 364,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "exposed at two places below the Post-Gupta structures"
+            },
+            {
+              "sourceId": "P1",
+              "page": 364,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "both belonging to the phase II of the Gupta Period"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "gupta-two-exposures"
+          ]
+        },
+        {
+          "id": "gupta-brickbat-wall",
+          "title": "Earlier brickbat wall",
+          "era": "Gupta, 200–400 CE",
+          "geometryStatus": "described only",
+          "sourceRefs": {
+            "siteDrawer": "gupta-brickbat-wall",
+            "fig13": null,
+            "filmCallouts": [
+              "gupta-wall"
+            ]
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 364,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "a wall made of brick-bats has also been traced"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ]
+        }
+      ],
+      "mustNotShow": [
+        "No monastic or royal identity (D).",
+        "Religious finds stay out of the hero scene; P1 gives period contexts, not trench coordinates (H). Gupta assemblage: Gaja Lakshmi medallion; small container with religious symbols. Fig.19/Fig.20 cross-references are swapped in P1."
+      ],
+      "years": {
+        "startYear": 200,
+        "endYear": 400,
+        "astronomicalStart": 200,
+        "astronomicalEnd": 400
+      },
+      "layerGeometryStatus": "schematic",
+      "thickness": {
+        "metres": null,
+        "status": "No per-period thickness found; use schematic thickness labelled \"schematic, not surveyed\"."
+      }
+    },
+    {
+      "order": 7,
+      "id": "kushan",
+      "displayLabel": "Kushan, 1–200 CE",
+      "table1": {
+        "evidence": {
+          "sourceId": "P1",
+          "page": 354,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "Kushan Period Beginning of the Common Era – 200 CE"
+        },
+        "startYear": 1,
+        "endYear": 200,
+        "astronomicalStart": 1,
+        "astronomicalEnd": 200,
+        "display": "1–200 CE",
+        "note": "“Beginning of the Common Era” is shown as 1 CE by the timing contract; there is no year 0."
+      },
+      "deposit": [
+        {
+          "sourceId": "P1",
+          "page": 356,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "Below these layers are successive structures of the Rajput, Post-Gupta, Gupta, Kushan, Sunga, and Mauryan Periods in the adjoining excavated areas."
+        },
+        {
+          "sourceId": "P1",
+          "page": 356,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "a substantial house complex of the Kushana period was an important find at the site"
+        }
+      ],
+      "colour": null,
+      "texture": null,
+      "colourNote": "No deposit colour or texture stated; Fig.13 colours are drawing conventions.",
+      "palette": [
+        "G-fig02",
+        "G-pib-trenches",
+        "G-fig14-15",
+        "G-fig13"
+      ],
+      "features": [
+        {
+          "id": "kushan-house",
+          "title": "House complex",
+          "era": "Kushan, 1–200 CE",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "kushan-house",
+            "fig13": [
+              "B01-main-west-wall-1",
+              "B01-main-west-wall-2",
+              "B02-north-partition-1",
+              "B03-short-central-stub-1",
+              "B04-south-room-wall-1",
+              "B05-west-south-stub-1",
+              "B06-northwest-isolated-brick-1",
+              "B07-passage-north-middle-1",
+              "B07-passage-north-middle-2",
+              "B08-passage-east-end-1",
+              "B09-passage-south-1",
+              "B10-Q15-northwest-wall-1",
+              "B10-Q15-northwest-wall-2",
+              "B11-Q15-southwestern-complex-1",
+              "B12-Q15-southeastern-complex-1",
+              "M01-north-mudbrick-1",
+              "M02-east-mudbrick-1",
+              "M03-central-mudbrick-1",
+              "M03-central-mudbrick-2",
+              "S01-east-upper-stone-1",
+              "S02-east-lower-stone-1",
+              "S02-east-lower-stone-2",
+              "S02-east-lower-stone-3",
+              "S03-passage-stone-fragments-1"
+            ],
+            "filmCallouts": [
+              "kushan-rooms"
+            ]
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 361,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "consisting of three or more rooms"
+            },
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period"
+            }
+          ],
+          "sourcedSize": [
+            {
+              "quoted": "3.86m X 2.42m",
+              "unitsAsQuoted": "metres (m)",
+              "metres": [
+                3.86,
+                2.42
+              ],
+              "note": "Printed room label; spacing normalised in transcription. Not the full house dimensions.",
+              "evidence": {
+                "sourceId": "P1",
+                "page": "361, Fig.13",
+                "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+                "text": "3.86m X 2.42m"
+              }
+            }
+          ],
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "fig13-mixed-periods",
+            "fig13-campus-position"
+          ]
+        },
+        {
+          "id": "kushan-bricks",
+          "title": "Burnt-brick wall fabric",
+          "era": "Kushan, 1–200 CE",
+          "geometryStatus": "described only",
+          "sourceRefs": {
+            "siteDrawer": "kushan-bricks",
+            "fig13": null,
+            "filmCallouts": [
+              "kushan-brick"
+            ]
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 362,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "39x27x6cm to 37x22x5.5cm and 33x22x5cm"
+            },
+            {
+              "sourceId": "P1",
+              "page": 361,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "burnt bricks, which are in the majority"
+            },
+            {
+              "sourceId": "P1",
+              "page": 362,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "In all the three phases, brick sizes are seen to vary"
+            }
+          ],
+          "sourcedSize": [
+            {
+              "quoted": "39x27x6cm to 37x22x5.5cm and 33x22x5cm",
+              "unitsAsQuoted": "centimetres (cm)",
+              "metres": [
+                [
+                  0.39,
+                  0.27,
+                  0.06
+                ],
+                [
+                  0.37,
+                  0.22,
+                  0.055
+                ],
+                [
+                  0.33,
+                  0.22,
+                  0.05
+                ]
+              ],
+              "note": "Each quoted centimetre measurement divided by 100.",
+              "evidence": {
+                "sourceId": "P1",
+                "page": 362,
+                "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+                "text": "39x27x6cm to 37x22x5.5cm and 33x22x5cm"
+              }
+            }
+          ],
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ]
+        },
+        {
+          "id": "B01-main-west-wall-1",
+          "title": "Fig.13 burnt brick remnant",
+          "era": "Kushan association from the Fig.13 caption only; per-wall period not stated",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "kushan-house",
+            "fig13": "B01-main-west-wall-1",
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period",
+              "verification": "read from verified Fig.13 raster"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "courseStatus": "not reliably readable or not supplied",
+          "material": "burnt brick",
+          "trench": "Q-14",
+          "drawingFrameYear": 2014,
+          "annotation": "Printed BURNT BRICK WALL; course digits not securely read",
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "fig13-mixed-periods"
+          ]
+        },
+        {
+          "id": "B01-main-west-wall-2",
+          "title": "Fig.13 burnt brick remnant",
+          "era": "Kushan association from the Fig.13 caption only; per-wall period not stated",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "kushan-house",
+            "fig13": "B01-main-west-wall-2",
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period",
+              "verification": "read from verified Fig.13 raster"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "courseStatus": "not reliably readable or not supplied",
+          "material": "burnt brick",
+          "trench": "Q-14",
+          "drawingFrameYear": 2014,
+          "annotation": "Printed BURNT BRICK WALL; course digits not securely read",
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "fig13-mixed-periods"
+          ]
+        },
+        {
+          "id": "B02-north-partition-1",
+          "title": "Fig.13 burnt brick remnant",
+          "era": "Kushan association from the Fig.13 caption only; per-wall period not stated",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "kushan-house",
+            "fig13": "B02-north-partition-1",
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period",
+              "verification": "read from verified Fig.13 raster"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "courseStatus": "not reliably readable or not supplied",
+          "material": "burnt brick",
+          "trench": "Q-14",
+          "drawingFrameYear": 2014,
+          "annotation": "Printed BURNT BRICK WALL; course count requires higher-resolution original",
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "fig13-mixed-periods"
+          ]
+        },
+        {
+          "id": "B03-short-central-stub-1",
+          "title": "Fig.13 burnt brick remnant",
+          "era": "Kushan association from the Fig.13 caption only; per-wall period not stated",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "kushan-house",
+            "fig13": "B03-short-central-stub-1",
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period",
+              "verification": "read from verified Fig.13 raster"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": 1,
+          "courseStatus": "read from adjacent label",
+          "material": "burnt brick",
+          "trench": "Q-14",
+          "drawingFrameYear": 2014,
+          "annotation": "Printed BURNT BRICK WALL (1 COURSE)",
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "fig13-mixed-periods"
+          ]
+        },
+        {
+          "id": "B04-south-room-wall-1",
+          "title": "Fig.13 burnt brick remnant",
+          "era": "Kushan association from the Fig.13 caption only; per-wall period not stated",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "kushan-house",
+            "fig13": "B04-south-room-wall-1",
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period",
+              "verification": "read from verified Fig.13 raster"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": 2,
+          "courseStatus": "read from adjacent label",
+          "material": "burnt brick",
+          "trench": "Q-14",
+          "drawingFrameYear": 2014,
+          "annotation": "Printed BURNT BRICK WALL (2 COURSES)",
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "fig13-mixed-periods"
+          ]
+        },
+        {
+          "id": "B05-west-south-stub-1",
+          "title": "Fig.13 burnt brick remnant",
+          "era": "Kushan association from the Fig.13 caption only; per-wall period not stated",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "kushan-house",
+            "fig13": "B05-west-south-stub-1",
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period",
+              "verification": "read from verified Fig.13 raster"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": 1,
+          "courseStatus": "read from adjacent label",
+          "material": "burnt brick",
+          "trench": "Q-14",
+          "drawingFrameYear": 2014,
+          "annotation": "Printed BURNT BRICK WALL (1 COURSE)",
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "fig13-mixed-periods"
+          ]
+        },
+        {
+          "id": "B06-northwest-isolated-brick-1",
+          "title": "Fig.13 burnt brick remnant",
+          "era": "Kushan association from the Fig.13 caption only; per-wall period not stated",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "kushan-house",
+            "fig13": "B06-northwest-isolated-brick-1",
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period",
+              "verification": "read from verified Fig.13 raster"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "courseStatus": "not reliably readable or not supplied",
+          "material": "burnt brick",
+          "trench": "Q-14",
+          "drawingFrameYear": 2014,
+          "annotation": "Orange masonry remnant, no safe course count",
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "fig13-mixed-periods"
+          ]
+        },
+        {
+          "id": "B07-passage-north-middle-1",
+          "title": "Fig.13 burnt brick remnant",
+          "era": "Kushan association from the Fig.13 caption only; per-wall period not stated",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "kushan-house",
+            "fig13": "B07-passage-north-middle-1",
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period",
+              "verification": "read from verified Fig.13 raster"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "courseStatus": "not reliably readable or not supplied",
+          "material": "burnt brick",
+          "trench": "Q-14",
+          "drawingFrameYear": 2014,
+          "annotation": "Burnt-brick passage-edge remnants",
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "fig13-mixed-periods"
+          ]
+        },
+        {
+          "id": "B07-passage-north-middle-2",
+          "title": "Fig.13 burnt brick remnant",
+          "era": "Kushan association from the Fig.13 caption only; per-wall period not stated",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "kushan-house",
+            "fig13": "B07-passage-north-middle-2",
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period",
+              "verification": "read from verified Fig.13 raster"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "courseStatus": "not reliably readable or not supplied",
+          "material": "burnt brick",
+          "trench": "Q-14",
+          "drawingFrameYear": 2014,
+          "annotation": "Burnt-brick passage-edge remnants",
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "fig13-mixed-periods"
+          ]
+        },
+        {
+          "id": "B08-passage-east-end-1",
+          "title": "Fig.13 burnt brick remnant",
+          "era": "Kushan association from the Fig.13 caption only; per-wall period not stated",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "kushan-house",
+            "fig13": "B08-passage-east-end-1",
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period",
+              "verification": "read from verified Fig.13 raster"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": 2,
+          "courseStatus": "read from adjacent label",
+          "material": "burnt brick",
+          "trench": "Q-14",
+          "drawingFrameYear": 2014,
+          "annotation": "Printed BURNT BRICK WALL (2 COURSES)",
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "fig13-mixed-periods"
+          ]
+        },
+        {
+          "id": "B09-passage-south-1",
+          "title": "Fig.13 burnt brick remnant",
+          "era": "Kushan association from the Fig.13 caption only; per-wall period not stated",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "kushan-house",
+            "fig13": "B09-passage-south-1",
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period",
+              "verification": "read from verified Fig.13 raster"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": 2,
+          "courseStatus": "read from adjacent label",
+          "material": "burnt brick",
+          "trench": "Q-14",
+          "drawingFrameYear": 2014,
+          "annotation": "Printed BURNT BRICK WALL (2 COURSES)",
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "fig13-mixed-periods"
+          ]
+        },
+        {
+          "id": "B10-Q15-northwest-wall-1",
+          "title": "Fig.13 burnt brick remnant",
+          "era": "Kushan association from the Fig.13 caption only; per-wall period not stated",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "kushan-house",
+            "fig13": "B10-Q15-northwest-wall-1",
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period",
+              "verification": "read from verified Fig.13 raster"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "courseStatus": "not reliably readable or not supplied",
+          "material": "burnt brick",
+          "trench": "Q-14",
+          "drawingFrameYear": 2014,
+          "annotation": "Orange wall/remnants in Q-15 extension",
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "fig13-mixed-periods",
+            "fig13-B10-trench-tag"
+          ]
+        },
+        {
+          "id": "B10-Q15-northwest-wall-2",
+          "title": "Fig.13 burnt brick remnant",
+          "era": "Kushan association from the Fig.13 caption only; per-wall period not stated",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "kushan-house",
+            "fig13": "B10-Q15-northwest-wall-2",
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period",
+              "verification": "read from verified Fig.13 raster"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "courseStatus": "not reliably readable or not supplied",
+          "material": "burnt brick",
+          "trench": "Q-14 / Q-15 drawn join",
+          "drawingFrameYear": [
+            2014,
+            2023
+          ],
+          "annotation": "Orange wall/remnants in Q-15 extension",
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "fig13-mixed-periods"
+          ]
+        },
+        {
+          "id": "B11-Q15-southwestern-complex-1",
+          "title": "Fig.13 burnt brick remnant",
+          "era": "Kushan association from the Fig.13 caption only; per-wall period not stated",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "kushan-house",
+            "fig13": "B11-Q15-southwestern-complex-1",
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period",
+              "verification": "read from verified Fig.13 raster"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "courseStatus": "not reliably readable or not supplied",
+          "material": "burnt brick",
+          "trench": "Q-15",
+          "drawingFrameYear": 2023,
+          "annotation": "Orange wall/remnants in Q-15 extension; course count unclear",
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "fig13-mixed-periods"
+          ]
+        },
+        {
+          "id": "B12-Q15-southeastern-complex-1",
+          "title": "Fig.13 burnt brick remnant",
+          "era": "Kushan association from the Fig.13 caption only; per-wall period not stated",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "kushan-house",
+            "fig13": "B12-Q15-southeastern-complex-1",
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period",
+              "verification": "read from verified Fig.13 raster"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "courseStatus": "not reliably readable or not supplied",
+          "material": "burnt brick",
+          "trench": "Q-15",
+          "drawingFrameYear": 2023,
+          "annotation": "Orange masonry at entrance; course count unclear",
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "fig13-mixed-periods"
+          ]
+        },
+        {
+          "id": "M01-north-mudbrick-1",
+          "title": "Fig.13 mud brick remnant",
+          "era": "Kushan association from the Fig.13 caption only; per-wall period not stated",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "kushan-house",
+            "fig13": "M01-north-mudbrick-1",
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period",
+              "verification": "read from verified Fig.13 raster"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "courseStatus": "not reliably readable or not supplied",
+          "material": "mud brick",
+          "trench": "Q-14",
+          "drawingFrameYear": 2014,
+          "annotation": "Rectangular stippled brick convention; MUD BRICK WALL label in plan; not grey stone",
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "fig13-mixed-periods"
+          ]
+        },
+        {
+          "id": "M02-east-mudbrick-1",
+          "title": "Fig.13 mud brick remnant",
+          "era": "Kushan association from the Fig.13 caption only; per-wall period not stated",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "kushan-house",
+            "fig13": "M02-east-mudbrick-1",
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period",
+              "verification": "read from verified Fig.13 raster"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "courseStatus": "not reliably readable or not supplied",
+          "material": "mud brick",
+          "trench": "Q-14",
+          "drawingFrameYear": 2014,
+          "annotation": "Rectangular stippled brick convention; incomplete east wall",
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "fig13-mixed-periods"
+          ]
+        },
+        {
+          "id": "M03-central-mudbrick-1",
+          "title": "Fig.13 mud brick remnant",
+          "era": "Kushan association from the Fig.13 caption only; per-wall period not stated",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "kushan-house",
+            "fig13": "M03-central-mudbrick-1",
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period",
+              "verification": "read from verified Fig.13 raster"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "courseStatus": "not reliably readable or not supplied",
+          "material": "mud brick",
+          "trench": "Q-14",
+          "drawingFrameYear": 2014,
+          "annotation": "Printed MUD BRICK WALL; partition/floor material supported by P1 pp.361–362",
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "fig13-mixed-periods"
+          ]
+        },
+        {
+          "id": "M03-central-mudbrick-2",
+          "title": "Fig.13 mud brick remnant",
+          "era": "Kushan association from the Fig.13 caption only; per-wall period not stated",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "kushan-house",
+            "fig13": "M03-central-mudbrick-2",
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period",
+              "verification": "read from verified Fig.13 raster"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "courseStatus": "not reliably readable or not supplied",
+          "material": "mud brick",
+          "trench": "Q-14",
+          "drawingFrameYear": 2014,
+          "annotation": "Printed MUD BRICK WALL; partition/floor material supported by P1 pp.361–362",
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "fig13-mixed-periods"
+          ]
+        },
+        {
+          "id": "S01-east-upper-stone-1",
+          "title": "Fig.13 stone remnant",
+          "era": "Kushan association from the Fig.13 caption only; per-wall period not stated",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "kushan-house",
+            "fig13": "S01-east-upper-stone-1",
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period",
+              "verification": "read from verified Fig.13 raster"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "courseStatus": "not reliably readable or not supplied",
+          "material": "stone",
+          "trench": "Q-14",
+          "drawingFrameYear": 2014,
+          "annotation": "Irregular grey stones; STONE WALL label nearby",
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "fig13-mixed-periods",
+            "fig13-stone-period-unassigned"
+          ]
+        },
+        {
+          "id": "S02-east-lower-stone-1",
+          "title": "Fig.13 stone remnant",
+          "era": "Kushan association from the Fig.13 caption only; per-wall period not stated",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "kushan-house",
+            "fig13": "S02-east-lower-stone-1",
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period",
+              "verification": "read from verified Fig.13 raster"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "courseStatus": "not reliably readable or not supplied",
+          "material": "stone",
+          "trench": "Q-14",
+          "drawingFrameYear": 2014,
+          "annotation": "Irregular grey stones; STONE WALL label nearby",
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "fig13-mixed-periods",
+            "fig13-stone-period-unassigned"
+          ]
+        },
+        {
+          "id": "S02-east-lower-stone-2",
+          "title": "Fig.13 stone remnant",
+          "era": "Kushan association from the Fig.13 caption only; per-wall period not stated",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "kushan-house",
+            "fig13": "S02-east-lower-stone-2",
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period",
+              "verification": "read from verified Fig.13 raster"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "courseStatus": "not reliably readable or not supplied",
+          "material": "stone",
+          "trench": "Q-14",
+          "drawingFrameYear": 2014,
+          "annotation": "Irregular grey stones; STONE WALL label nearby",
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "fig13-mixed-periods",
+            "fig13-stone-period-unassigned"
+          ]
+        },
+        {
+          "id": "S02-east-lower-stone-3",
+          "title": "Fig.13 stone remnant",
+          "era": "Kushan association from the Fig.13 caption only; per-wall period not stated",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "kushan-house",
+            "fig13": "S02-east-lower-stone-3",
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period",
+              "verification": "read from verified Fig.13 raster"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "courseStatus": "not reliably readable or not supplied",
+          "material": "stone",
+          "trench": "Q-14",
+          "drawingFrameYear": 2014,
+          "annotation": "Irregular grey stones; STONE WALL label nearby",
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "fig13-mixed-periods",
+            "fig13-stone-period-unassigned"
+          ]
+        },
+        {
+          "id": "S03-passage-stone-fragments-1",
+          "title": "Fig.13 stone remnant",
+          "era": "Kushan association from the Fig.13 caption only; per-wall period not stated",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "kushan-house",
+            "fig13": "S03-passage-stone-fragments-1",
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period",
+              "verification": "read from verified Fig.13 raster"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "courseStatus": "not reliably readable or not supplied",
+          "material": "stone",
+          "trench": "Q-14",
+          "drawingFrameYear": 2014,
+          "annotation": "Irregular grey stone fragments beside passage; not full restored wall",
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "fig13-mixed-periods",
+            "fig13-stone-period-unassigned"
+          ]
+        },
+        {
+          "id": "pillar-base-as-drawn",
+          "title": "Stone pillar base, as drawn",
+          "era": "Fig.13 house plan, Kushan association",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "pillar-base-as-drawn",
+            "fig13": "pillar-base-as-drawn",
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "PILLAR BASE (STONE)"
+            },
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "fig13-mixed-periods"
+          ]
+        },
+        {
+          "id": "top-left-stone-as-drawn",
+          "title": "Top-left grey stone symbol",
+          "era": "Fig.13 plan; exact period/function not independently assigned",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "top-left-stone-as-drawn",
+            "fig13": "top-left-stone-as-drawn",
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F",
+            "I"
+          ],
+          "problemFlags": [
+            "fig13-mixed-periods",
+            "fig13-stone-period-unassigned"
+          ]
+        },
+        {
+          "id": "ring-well-as-drawn",
+          "title": "Ring well, as drawn",
+          "era": "Unassigned: drawn on the Kushan-captioned plan",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "ring-well-as-drawn",
+            "fig13": "ring-well-as-drawn",
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "RING WELL"
+            },
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "two-ring-wells",
+            "fig13-mixed-periods"
+          ],
+          "modelRecommendation": "Do not model as a second well. Default: omit from the Kushan layer and keep it in the 2D plan inset only."
+        },
+        {
+          "id": "drain-as-drawn",
+          "title": "Tile drain, as drawn",
+          "era": "Unassigned: drawn on the Kushan-captioned plan",
+          "geometryStatus": "traced from a figure",
+          "sourceRefs": {
+            "siteDrawer": "drain-as-drawn",
+            "fig13": "drain-as-drawn",
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "TERRACOTTA TILES DRAIN"
+            },
+            {
+              "sourceId": "P1",
+              "page": "361, Fig.13",
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Drawing of House Complex, Kushana Period"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "two-drains",
+            "fig13-mixed-periods"
+          ],
+          "modelRecommendation": "Do not model as a second drain. Default: omit from the Kushan layer and keep it in the 2D plan inset only."
+        }
+      ],
+      "untracedFig13Labels": [
+        "PIT",
+        "POST HOLES",
+        "pots",
+        "mudbrick floor patch"
+      ],
+      "mustNotShow": [
+        "No palace, king’s house, roof, windows or completed house; conjectural completion is opt-in outline only (D, Addendum 5).",
+        "Religious finds stay out of the hero scene; P1 gives period contexts, not trench coordinates (H). Kushan assemblage: terracotta votive tank; vases with embossed triratna symbol.",
+        "The 2023 central early-Kushan structures are not these Fig.13 walls (Addendum 3)."
+      ],
+      "years": {
+        "startYear": 1,
+        "endYear": 200,
+        "astronomicalStart": 1,
+        "astronomicalEnd": 200
+      },
+      "layerGeometryStatus": "schematic",
+      "thickness": {
+        "metres": null,
+        "status": "No per-period thickness found; use schematic thickness labelled \"schematic, not surveyed\"."
+      }
+    },
+    {
+      "order": 8,
+      "id": "sunga",
+      "displayLabel": "Sunga, 200 BCE – 1 CE",
+      "table1": {
+        "evidence": {
+          "sourceId": "P1",
+          "page": 354,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "Sunga Period 200 BCE – Up to the beginning of Common Era"
+        },
+        "startYear": -200,
+        "endYear": 1,
+        "astronomicalStart": -199,
+        "astronomicalEnd": 1,
+        "display": "200 BCE – 1 CE",
+        "note": "“Up to the beginning of Common Era” is shown as 1 CE by the timing contract."
+      },
+      "deposit": [
+        {
+          "sourceId": "P1",
+          "page": 356,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "Below these layers are successive structures of the Rajput, Post-Gupta, Gupta, Kushan, Sunga, and Mauryan Periods in the adjoining excavated areas."
+        }
+      ],
+      "colour": null,
+      "texture": null,
+      "colourNote": "No deposit colour or texture stated.",
+      "palette": [
+        "G-fig02",
+        "G-pib-trenches"
+      ],
+      "features": [
+        {
+          "id": "sunga-masonry",
+          "title": "Mudbrick and rubble remains",
+          "era": "Sunga, 200 BCE – 1 CE",
+          "geometryStatus": "described only",
+          "sourceRefs": {
+            "siteDrawer": "sunga-masonry",
+            "fig13": null,
+            "filmCallouts": [
+              "sunga-wall"
+            ]
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 358,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "mud-bricks as well as rubble stones"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ]
+        },
+        {
+          "id": "sunga-burnt-patches",
+          "title": "Burnt patches",
+          "era": "Sunga, 200 BCE – 1 CE",
+          "geometryStatus": "described only",
+          "sourceRefs": {
+            "siteDrawer": "sunga-burnt-patches",
+            "fig13": null,
+            "filmCallouts": [
+              "sunga-patches"
+            ]
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 358,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "a few burnt patches"
+            },
+            {
+              "sourceId": "P1",
+              "page": 358,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "sometimes in association with these structures and sometimes isolated"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ]
+        },
+        {
+          "id": "sunga-kushan-lane",
+          "title": "Pottery-and-earth lane",
+          "era": "Sunga/Kushan",
+          "geometryStatus": "described only",
+          "sourceRefs": {
+            "siteDrawer": "sunga-kushan-lane",
+            "fig13": null,
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 362,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "A lane, laid of fragments of potteries, mixed with earth"
+            },
+            {
+              "sourceId": "P1",
+              "page": 362,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "belonging to both Sunga and Kushan Periods"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "spansLayers": [
+            "sunga",
+            "kushan"
+          ],
+          "problemFlags": [
+            "lane-spans-two-layers"
+          ]
+        }
+      ],
+      "mustNotShow": [
+        "No single destructive fire, invasion or fire effect (D).",
+        "Religious finds stay out of the hero scene; P1 gives period contexts, not trench coordinates (H). Sunga assemblage: terracotta Yakshi figurine."
+      ],
+      "years": {
+        "startYear": -200,
+        "endYear": 1,
+        "astronomicalStart": -199,
+        "astronomicalEnd": 1
+      },
+      "layerGeometryStatus": "schematic",
+      "thickness": {
+        "metres": null,
+        "status": "No per-period thickness found; use schematic thickness labelled \"schematic, not surveyed\"."
+      }
+    },
+    {
+      "order": 9,
+      "id": "mauryan",
+      "displayLabel": "Mauryan, 323–200 BCE",
+      "table1": {
+        "evidence": {
+          "sourceId": "P1",
+          "page": 354,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "Mauryan Period 323 BCE – 200 BCE"
+        },
+        "startYear": -323,
+        "endYear": -200,
+        "astronomicalStart": -322,
+        "astronomicalEnd": -199,
+        "display": "323–200 BCE",
+        "note": null
+      },
+      "deposit": [
+        {
+          "sourceId": "P1",
+          "page": 356,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "Below these layers are successive structures of the Rajput, Post-Gupta, Gupta, Kushan, Sunga, and Mauryan Periods in the adjoining excavated areas."
+        },
+        {
+          "sourceId": "P1",
+          "page": 356,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "A ring well and drain made of terracotta tiles were excavated as below as on the Mauryan period levels"
+        }
+      ],
+      "colour": null,
+      "texture": null,
+      "colourNote": "No deposit colour or texture stated.",
+      "palette": [
+        "G-fig02",
+        "G-pib-trenches",
+        "G-fig07-pib-well"
+      ],
+      "features": [
+        {
+          "id": "mauryan-ring-well",
+          "title": "Terracotta ring well",
+          "era": "Mauryan, 323–200 BCE",
+          "geometryStatus": "described only",
+          "sourceRefs": {
+            "siteDrawer": "mauryan-ring-well",
+            "fig13": null,
+            "filmCallouts": [
+              "maur-rings"
+            ]
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 357,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "terracotta rings with a diameter of about 70cm"
+            },
+            {
+              "sourceId": "P1",
+              "page": 357,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "The ring well has an approximate depth of about 2.20m."
+            },
+            {
+              "sourceId": "P1",
+              "page": 357,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "The layer through which the Mauryan ring well cuts through, i.e., the Pre-Mauryan levels"
+            }
+          ],
+          "sourcedSize": [
+            {
+              "quoted": "terracotta rings with a diameter of about 70cm",
+              "unitsAsQuoted": "centimetres (cm)",
+              "metres": [
+                0.7
+              ],
+              "note": "70 cm ÷ 100 = 0.70 m diameter.",
+              "evidence": {
+                "sourceId": "P1",
+                "page": 357,
+                "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+                "text": "terracotta rings with a diameter of about 70cm"
+              }
+            },
+            {
+              "quoted": "The ring well has an approximate depth of about 2.20m.",
+              "unitsAsQuoted": "metres (m)",
+              "metres": [
+                2.2
+              ],
+              "note": null,
+              "evidence": {
+                "sourceId": "P1",
+                "page": 357,
+                "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+                "text": "The ring well has an approximate depth of about 2.20m."
+              }
+            },
+            {
+              "quoted": "The average height of the rings is 15cm.",
+              "unitsAsQuoted": "centimetres (cm)",
+              "metres": [
+                0.15
+              ],
+              "note": "15 cm ÷ 100 = 0.15 m mean ring height.",
+              "evidence": {
+                "sourceId": "P1",
+                "page": 357,
+                "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+                "text": "The average height of the rings is 15cm."
+              }
+            }
+          ],
+          "sourcedDepth": {
+            "metres": 2.2,
+            "meaning": "approximate ring-well depth, not a layer thickness or below-peg depth",
+            "evidence": {
+              "sourceId": "P1",
+              "page": 357,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "The ring well has an approximate depth of about 2.20m."
+            }
+          },
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "spansLayers": [
+            "mauryan",
+            "pre-mauryan"
+          ],
+          "problemFlags": [
+            "ring-well-arithmetic",
+            "two-ring-wells",
+            "ring-well-cuts-older-layers"
+          ]
+        },
+        {
+          "id": "mauryan-drain",
+          "title": "Terracotta-tile drain",
+          "era": "Mauryan, 323–200 BCE",
+          "geometryStatus": "described only",
+          "sourceRefs": {
+            "siteDrawer": "mauryan-drain",
+            "fig13": null,
+            "filmCallouts": [
+              "maur-drain"
+            ]
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 357,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "A drain encased with terracotta tiles on either side"
+            },
+            {
+              "sourceId": "P1",
+              "page": 357,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "it may have been draining water in the direction of west to east"
+            },
+            {
+              "sourceId": "P1",
+              "page": 357,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "in the sealing floor of this period"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F",
+            "I"
+          ],
+          "problemFlags": [
+            "two-drains"
+          ]
+        }
+      ],
+      "mustNotShow": [
+        "No running-water animation or asserted domestic function (D).",
+        "Do not claim 18 × 0.15 m equals 2.20 m; nested lips are a modelling choice (Addendum 5)."
+      ],
+      "years": {
+        "startYear": -323,
+        "endYear": -200,
+        "astronomicalStart": -322,
+        "astronomicalEnd": -199
+      },
+      "layerGeometryStatus": "schematic",
+      "thickness": {
+        "metres": null,
+        "status": "No per-period thickness found; use schematic thickness labelled \"schematic, not surveyed\"."
+      }
+    },
+    {
+      "order": 10,
+      "id": "pre-mauryan",
+      "displayLabel": "Pre-Mauryan, 540–323 BCE",
+      "table1": {
+        "evidence": {
+          "sourceId": "P1",
+          "page": 354,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "Pre-Mauryan Period 540 BCE – 323 BCE"
+        },
+        "startYear": -540,
+        "endYear": -323,
+        "astronomicalStart": -539,
+        "astronomicalEnd": -322,
+        "display": "540–323 BCE",
+        "note": "540 BCE is the earliest sample date, not a foundation year."
+      },
+      "deposit": [
+        {
+          "sourceId": "P1",
+          "page": 357,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "a series of stratified layers of pale yellow and grayish textured soil"
+        },
+        {
+          "sourceId": "P1",
+          "page": 357,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "Some organic samples from these Pre-Mauryan layers have given dates as early as 540 BCE."
+        }
+      ],
+      "colour": {
+        "value": "pale yellow and grayish",
+        "evidence": {
+          "sourceId": "P1",
+          "page": 357,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "a series of stratified layers of pale yellow and grayish textured soil"
+        }
+      },
+      "texture": {
+        "value": "stratified layers of textured soil",
+        "evidence": [
+          {
+            "sourceId": "P1",
+            "page": 357,
+            "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+            "text": "a series of stratified layers of pale yellow and grayish textured soil"
+          }
+        ]
+      },
+      "palette": [
+        "G-fig02",
+        "G-pib-trenches"
+      ],
+      "features": [
+        {
+          "id": "pre-mauryan-soil",
+          "title": "Pale-yellow and greyish soil layers",
+          "era": "Pre-Mauryan, 540–323 BCE",
+          "geometryStatus": "schematic",
+          "sourceRefs": {
+            "siteDrawer": "pre-mauryan-soil",
+            "fig13": null,
+            "filmCallouts": [
+              "pre-soil"
+            ]
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 357,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "a series of stratified layers of pale yellow and grayish textured soil"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ]
+        },
+        {
+          "id": "pre-mauryan-sherds",
+          "title": "Painted Grey Ware sherds",
+          "era": "Pre-Mauryan, 540–323 BCE",
+          "geometryStatus": "described only",
+          "sourceRefs": {
+            "siteDrawer": "pre-mauryan-sherds",
+            "fig13": null,
+            "filmCallouts": [
+              "pre-pgw"
+            ]
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 357,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "rolled sherds of grey ware and painted grey ware"
+            },
+            {
+              "sourceId": "P1",
+              "page": 357,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Some organic samples from these Pre-Mauryan layers have given dates as early as 540 BCE."
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ]
+        },
+        {
+          "id": "controlled-pit",
+          "title": "Controlled investigation pit",
+          "era": "Recent excavation, cut into Pre-Mauryan levels beneath the Mauryan deposit",
+          "geometryStatus": "described only",
+          "sourceRefs": {
+            "siteDrawer": "controlled-pit",
+            "fig13": null,
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 357,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "a controlled pit excavation to check for evidence of cultural assemblage beneath the Mauryan deposit"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "modelRecommendation": "A modern investigation cut, not an ancient feature."
+        }
+      ],
+      "mustNotShow": [
+        "No epic-city identification, title, era or location pin; the Indraprastha line belongs on the About page only (H).",
+        "No invented village houses; no house plan is reported (D)."
+      ],
+      "years": {
+        "startYear": -540,
+        "endYear": -323,
+        "astronomicalStart": -539,
+        "astronomicalEnd": -322
+      },
+      "layerGeometryStatus": "schematic",
+      "thickness": {
+        "metres": null,
+        "status": "No per-period thickness found; use schematic thickness labelled \"schematic, not surveyed\"."
+      }
+    },
+    {
+      "order": 11,
+      "id": "silt",
+      "label": "Silt deposit",
+      "table1": null,
+      "dateNote": "Not a Table 1 period; below Pre-Mauryan levels in P1. Date unknown.",
+      "deposit": [
+        {
+          "sourceId": "P1",
+          "page": 356,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "Below the Pre-Mauryan levels was found a significant silt deposit"
+        },
+        {
+          "sourceId": "P1",
+          "page": 356,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "the soil texture of which consists of yellowish clay"
+        },
+        {
+          "sourceId": "P1",
+          "page": 356,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "probably the evidence of water submergence"
+        },
+        {
+          "sourceId": "P1",
+          "page": 356,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "This layer is preceded by various alternative and subsequent pale yellow and grayish soil layers"
+        }
+      ],
+      "colour": {
+        "value": "yellowish",
+        "evidence": {
+          "sourceId": "P1",
+          "page": 356,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "the soil texture of which consists of yellowish clay"
+        }
+      },
+      "texture": {
+        "value": "clay",
+        "evidence": [
+          {
+            "sourceId": "P1",
+            "page": 356,
+            "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+            "text": "the soil texture of which consists of yellowish clay"
+          }
+        ]
+      },
+      "palette": [
+        "G-fig02",
+        "G-pib-trenches"
+      ],
+      "features": [
+        {
+          "id": "silt",
+          "title": "Silt deposit",
+          "era": "Below pre-Mauryan levels in P1",
+          "geometryStatus": "schematic",
+          "sourceRefs": {
+            "siteDrawer": "silt",
+            "fig13": null,
+            "filmCallouts": []
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 356,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Below the Pre-Mauryan levels was found a significant silt deposit"
+            },
+            {
+              "sourceId": "P1",
+              "page": 356,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "probably the evidence of water submergence"
+            }
+          ],
+          "sourcedSize": null,
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F",
+            "I"
+          ],
+          "problemFlags": [
+            "silt-vs-n24-fluvial"
+          ]
+        }
+      ],
+      "mustNotShow": [
+        "Probable water submergence only; not a proven single flood or a universal flood horizon (C).",
+        "Do not equate it with N24’s “compact yellow fluvial deposit” (C).",
+        "Do not invent a count of alternating pale-yellow/grey beds (C)."
+      ],
+      "years": {
+        "startYear": null,
+        "endYear": null,
+        "astronomicalStart": null,
+        "astronomicalEnd": null
+      },
+      "layerGeometryStatus": "schematic",
+      "thickness": {
+        "metres": null,
+        "status": "No per-period thickness found; use schematic thickness labelled \"schematic, not surveyed\"."
+      }
+    },
+    {
+      "order": 12,
+      "id": "base-fade",
+      "label": "Unlabelled base fade",
+      "table1": null,
+      "dateNote": "Modelling device for the open research limit. Unlabelled on screen.",
+      "deposit": [
+        {
+          "sourceId": "P1",
+          "page": 356,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "the natural soil has not yet been reached"
+        },
+        {
+          "sourceId": "P1",
+          "page": 356,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "towards the slope area of the mound is almost 14m"
+        },
+        {
+          "sourceId": "P1",
+          "page": 356,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "Through cylindrical boring"
+        },
+        {
+          "sourceId": "P1",
+          "page": 356,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "continuing till approximately 16-17m"
+        }
+      ],
+      "colour": null,
+      "texture": null,
+      "colourNote": "No source colour; fade is a modelling choice.",
+      "palette": [],
+      "features": [
+        {
+          "id": "deepest-cut",
+          "title": "Maximum exposed excavation depth",
+          "era": "Recent excavation, cumulative slope depth",
+          "geometryStatus": "schematic",
+          "sourceRefs": {
+            "siteDrawer": "deepest-cut",
+            "fig13": null,
+            "filmCallouts": [
+              "depth-excavated",
+              "depth-natural"
+            ]
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 356,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "towards the slope area of the mound is almost 14m"
+            },
+            {
+              "sourceId": "P1",
+              "page": 356,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "the natural soil has not yet been reached"
+            }
+          ],
+          "sourcedSize": [
+            {
+              "quoted": "towards the slope area of the mound is almost 14m",
+              "unitsAsQuoted": "metres (m)",
+              "metres": [
+                14
+              ],
+              "note": "Almost 14 m is approximate and local to the reported slope excavation.",
+              "evidence": {
+                "sourceId": "P1",
+                "page": 356,
+                "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+                "text": "towards the slope area of the mound is almost 14m"
+              }
+            }
+          ],
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "solid",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "depth-gate"
+          ]
+        },
+        {
+          "id": "boring-indicator",
+          "title": "Cultural material in a boring",
+          "era": "Recent investigation, not an ancient well",
+          "geometryStatus": "schematic",
+          "sourceRefs": {
+            "siteDrawer": "boring-indicator",
+            "fig13": null,
+            "filmCallouts": [
+              "depth-boring"
+            ]
+          },
+          "evidence": [
+            {
+              "sourceId": "P1",
+              "page": 356,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "Through cylindrical boring"
+            },
+            {
+              "sourceId": "P1",
+              "page": 356,
+              "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+              "text": "continuing till approximately 16-17m"
+            }
+          ],
+          "sourcedSize": [
+            {
+              "quoted": "continuing till approximately 16-17m",
+              "unitsAsQuoted": "metres (m)",
+              "metres": [
+                16,
+                17
+              ],
+              "note": "16–17 m is a reported approximate boring-depth interval, not an exposed trench dimension.",
+              "evidence": {
+                "sourceId": "P1",
+                "page": 356,
+                "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+                "text": "continuing till approximately 16-17m"
+              }
+            }
+          ],
+          "sourcedDepth": null,
+          "courses": null,
+          "drawing": "outline",
+          "certainty": [
+            "F"
+          ],
+          "problemFlags": [
+            "depth-gate"
+          ]
+        }
+      ],
+      "mustNotShow": [
+        "Never label the base bedrock, natural soil or the earliest settlement (C).",
+        "Boring evidence is not a 16–17 m exposed cut (C)."
+      ],
+      "years": {
+        "startYear": null,
+        "endYear": null,
+        "astronomicalStart": null,
+        "astronomicalEnd": null
+      },
+      "layerGeometryStatus": "schematic",
+      "thickness": {
+        "metres": null,
+        "status": "No per-period thickness found; use schematic thickness labelled \"schematic, not surveyed\"."
+      }
+    }
+  ],
+  "captionOnly": [
+    {
+      "id": "excavation-2014-pgw",
+      "title": "Painted Grey Ware find reported in 2014",
+      "era": "Excavation season 2013–14",
+      "geometryStatus": "caption only",
+      "sourceRefs": {
+        "siteDrawer": "excavation-2014-pgw",
+        "fig13": null,
+        "filmCallouts": [
+          "dig-2014-pgw"
+        ]
+      },
+      "caption": "Painted Grey Ware found",
+      "evidence": [
+        {
+          "sourceId": "N24",
+          "page": "web article, unpaginated",
+          "url": "https://indianexpress.com/article/long-reads/indraprastha-can-excavations-at-purana-qila-find-its-mahabharata-link-9364812/",
+          "text": "After that first breakthrough in 2014 – when the team found some PGW sherds"
+        },
+        {
+          "sourceId": "P1",
+          "page": 352,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "field seasons of 2013-2014 and 2017-2018"
+        }
+      ],
+      "note": "No geometry, leader line or feature target in the block (timing v1)."
+    },
+    {
+      "id": "excavation-2017-pgw",
+      "title": "Stratified Painted Grey Ware find",
+      "era": "Excavation season 2017–18",
+      "geometryStatus": "caption only",
+      "sourceRefs": {
+        "siteDrawer": "excavation-2017-pgw",
+        "fig13": null,
+        "filmCallouts": [
+          "dig-2017-pgw"
+        ]
+      },
+      "caption": "Painted Grey Ware layer",
+      "evidence": [
+        {
+          "sourceId": "N24",
+          "page": "web article, unpaginated",
+          "url": "https://indianexpress.com/article/long-reads/indraprastha-can-excavations-at-purana-qila-find-its-mahabharata-link-9364812/",
+          "text": "it was in the next round of excavations, in 2017, Swarnkar says, that the ASI was able to establish a layer of PGW findings."
+        },
+        {
+          "sourceId": "P1",
+          "page": 352,
+          "url": "https://web.archive.org/web/20251207003923id_/https://www.heritageuniversityofkerala.com/JournalPDF/Volume11.1/15.pdf",
+          "text": "field seasons of 2013-2014 and 2017-2018"
+        }
+      ],
+      "note": "No geometry, leader line or feature target in the block (timing v1)."
+    },
+    {
+      "id": "excavation-2023-structures",
+      "title": "Exposed early-Kushan structures",
+      "era": "Excavation season 2022–23",
+      "geometryStatus": "caption only",
+      "sourceRefs": {
+        "siteDrawer": "excavation-2023-structures",
+        "fig13": null,
+        "filmCallouts": [
+          "dig-2023-structures"
+        ]
+      },
+      "caption": "Early Kushan structures",
+      "evidence": [
+        {
+          "sourceId": "P2",
+          "page": "web release, unpaginated",
+          "url": "https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=1928410",
+          "text": "Currently, structures from the early Kushana level have been exposed"
+        },
+        {
+          "sourceId": "N24",
+          "page": "web article, unpaginated",
+          "url": "https://indianexpress.com/article/long-reads/indraprastha-can-excavations-at-purana-qila-find-its-mahabharata-link-9364812/",
+          "text": "one that is close to the centre of the Purana Qila, near the Kunti Temple"
+        }
+      ],
+      "note": "No geometry, leader line or feature target in the block (timing v1).",
+      "provenanceNote": "The 2022–23 work described by N24 was central, near the Kunti temple, not the SE slope. The composite section is not that trench."
+    }
+  ],
+  "crossCheck": {
+    "drawerIdsMissingFromPack": [],
+    "calloutFeatureIdsMissingFromPack": [],
+    "captionCalloutsWithoutPackEntry": [],
+    "fig13IdsMissingFromPack": [],
+    "packFeaturesWithoutSource": [],
+    "packFeaturesWithUnknownDrawerOrFig13Ref": [],
+    "packOnlySourcedFeaturesWithoutDrawer": [
+      "modern-central-rubble-wall",
+      "sultanate-parallel-wall",
+      "sultanate-phase1-wall"
+    ],
+    "fig13WallsCoveredByKushanHouseDrawerOnly": 24,
+    "dataInconsistencies": [
+      "fig13-B10-trench-tag"
+    ]
+  }
+}
