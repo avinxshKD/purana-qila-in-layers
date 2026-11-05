@@ -1,0 +1,25 @@
+{
+  "name": "strata",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "bench": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "build:site": "vite build --config vite.site.config.js",
+    "preview:site": "vite preview --config vite.site.config.js --host 127.0.0.1 --port 4188 --strictPort",
+    "test": "node --test test/time.test.js test/harness.test.js test/layers.test.js",
+    "lookdev": "node scripts/lookdev.cjs",
+    "tech-test": "node scripts/tech-test.cjs"
+  },
+  "dependencies": {
+    "three": "0.187.0",
+    "three-mesh-bvh": "0.9.18"
+  },
+  "devDependencies": {
+    "puppeteer-core": "25.16.0",
+    "vite": "8.3.5"
+  }
+}
