@@ -1,0 +1,6 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>site tier soil view</title><style>body{margin:0;background:#000}</style></head>
+<body><script type="module">
+// Dynamic import, so a failure in the module's top-level await arrives here with its stack, not as "Script error.".
+import('./soil-view.js').catch(e => { window.viewError = String(e?.stack ?? e?.message ?? e); });
+</script></body></html>
