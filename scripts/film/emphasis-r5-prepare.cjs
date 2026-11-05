@@ -1,0 +1,10 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),{spawnSync}=require('node:child_process'),{root}=require('../browser.cjs'),{verifySnapshot,verifySource,fileSHA256}=require('./f2-contract.cjs');
+const args=process.argv.slice(2),i=args.indexOf('--out'),out=path.resolve(i<0?path.join(root,'output/film/f2/emphasis-r5-r2b'):args[i+1]),baseline=path.join(root,'output/film/f2/preflight-m1-r2b'),source=path.join(out,'source');
+if(fs.existsSync(out))throw new Error('Use a new emphasis candidate folder');
+const manifest=verifySnapshot(baseline),inputs=verifySource(baseline);fs.mkdirSync(out,{recursive:true});fs.cpSync(path.join(baseline,'source'),source,{recursive:true});
+const changes={};for(const name of['main.js','emphasis.js','emphasis-film.js','emphasis-powers.js','emphasis-fields.js']){const relative='src/film/'+name;fs.copyFileSync(path.join(root,relative),path.join(source,relative));changes[relative]=fileSHA256(path.join(source,relative));}
+const fieldDirectory=fs.readFileSync(path.join(root,'src/film/emphasis-fields.js'),'utf8').match(/POOL_FIELD_DIRECTORY='([^']+)'/)[1];fs.cpSync(path.join(root,'public',fieldDirectory),path.join(source,'public',fieldDirectory),{recursive:true});
+for(const [relative,hash]of Object.entries(inputs.files))if(!changes[relative]&&fileSHA256(path.join(source,relative))!==hash)throw new Error('Unrelated baseline source changed: '+relative);
+fs.writeFileSync(path.join(out,'candidate-source.json'),JSON.stringify({baseline,baselineSnapshotSHA256:manifest.snapshotSHA256,baselineSourceSHA256:inputs.sha256,changes,geometry:'Immutable accepted r2b, not concurrent M2 worktree',scope:'Film soft-pool integration only; cold-a, end-b and Sources URL[TBD] unchanged',calibration:'Native review runtime powers recorded separately; main defaults must be populated from that evidence before promotion'},null,2)+'\n');
+const r=spawnSync(process.execPath,[path.join(__dirname,'snapshot.cjs'),'--source',source,'--out',out,'--frozen-source','--description','Main-film broad soft callout pools on immutable accepted r2b, before M2'],{cwd:root,stdio:'inherit'});if(r.status!==0)process.exit(r.status||1);
