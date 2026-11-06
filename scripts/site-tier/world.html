@@ -1,0 +1,6 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>site tier world harness</title><style>body{margin:0;background:#000}canvas{display:block}</style></head>
+<body><script type="module">
+// Dynamic import, so a failure in the module's top-level await arrives here with its stack, not as "Script error.".
+import('./world-harness.js').catch(e => { window.harnessError = String(e?.stack ?? e?.message ?? e); });
+</script></body></html>
