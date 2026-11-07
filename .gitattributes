@@ -1,0 +1,15 @@
+* text=auto eol=lf
+*.bin binary
+*.r8 binary
+*.rgba binary
+*.webp binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.mp4 binary
+*.wav binary
+*.woff2 binary
+*.pdf binary
+*.zip binary
