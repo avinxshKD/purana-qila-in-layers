@@ -1,0 +1,15 @@
+{
+  "comment": "About drawer copy, approved by the user and fact-checked by the research agent; one string per paragraph, a newline is a line break within a paragraph. links maps exact text in the paragraphs to its URL (opened in a new tab). Read by src/site/main.js only; not an anchor-hash input.",
+  "paragraphs": [
+    "This is a composite section, not one surveyed trench. It combines features recorded in several excavated areas at Purana Qila, the Old Fort in New Delhi. Layer thicknesses and feature positions are schematic, and only the parts the excavators reported are drawn.",
+    "Dates follow Table 1 of the excavation paper. Its Sultanate period ends at 1500 CE and its Mughal period starts at 1600 CE, so the table has no period for the century in between.",
+    "The excavators have not reached natural soil, the ground below every human layer. On the mound's slope they dug almost 14 m deep. A borehole found signs of habitation down to about 16–17 m. No source gives a depth for any single period.",
+    "The Archaeological Survey of India dug here in 2013–14 and 2017–18 under Dr Vasant Kumar Swarnkar, and again in 2022–23. That season's central trench, near the Kunti temple, is not this section.",
+    "The fort has a traditional association with Indraprastha; this reconstruction shows excavated remains, not a verified epic city.",
+    "Each feature's panel quotes its source. Most quotes come from the excavation paper by Vasant Kumar Swarnkar and Satarupa Bal of the ASI, in Heritage 11.1.",
+    "Made by Avinash.\nCode: MIT. Film and images: CC BY 4.0.\nSource code: github.com/avinxshKD/purana-qila-in-layers"
+  ],
+  "links": {
+    "github.com/avinxshKD/purana-qila-in-layers": "https://github.com/avinxshKD/purana-qila-in-layers"
+  }
+}

@@ -1,0 +1,29 @@
+node_modules/
+tools/
+output/
+dist/
+
+# Research material stays local; only the data files the build and tests read are published.
+reference/*
+!reference/era-model.json
+!reference/film-callouts.json
+!reference/site-drawers.json
+!reference/site-sources.json
+!reference/site-about.json
+!reference/purana-qila/
+reference/purana-qila/*
+!reference/purana-qila/fig13-walls.json
+
+# Film-pipeline emphasis fields; the site ships public/site-pools-m2b.
+public/film-emphasis/
+public/film-emphasis-m2b/
+public/film-emphasis-r6-r2b/
+
+# Round 4-6 scratch scripts. round6-checks.cjs and capture-session.cjs are libraries other scripts require;
+# round6-stage-a2.cjs is the entry of npm run lookdev.
+scripts/round4*
+scripts/round5*
+scripts/round6*
+!scripts/round6-checks.cjs
+!scripts/round6-stage-a2.cjs
+scripts/row-luma.cjs
