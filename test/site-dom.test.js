@@ -1,0 +1,158 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import {createRequire} from 'node:module';
+import {scrubberGeometry,yearToX} from '../src/site/scrubber.js';
+const require=createRequire(import.meta.url),puppeteer=require('puppeteer-core');
+const {serve,executable,root}=require('../scripts/browser.cjs');
+const drawerCopy=JSON.parse(fs.readFileSync(path.join(root,'reference','site-drawers.json'),'utf8'));
+const sourceCopy=JSON.parse(fs.readFileSync(path.join(root,'reference','site-sources.json'),'utf8'));
+test('site DOM shell, keyboard timeline, source drawers and mobile layout',{timeout:90000},async()=>{
+  const server=await serve({port:0});let browser;const errors=[];
+  const out=path.join(root,'output','site',process.env.STRATA_SITE_TEST_OUTPUT||'s4-baseline');fs.mkdirSync(out,{recursive:true});
+  try{
+    browser=await puppeteer.launch({executablePath:executable(),headless:true,args:['--disable-gpu','--force-color-profile=srgb','--hide-scrollbars']});
+    const page=await browser.newPage();page.on('pageerror',error=>errors.push(error.message));
+    await page.setViewport({width:1440,height:900,deviceScaleFactor:1});
+    await page.goto(`${server.url}/site.html?dom-only`);
+    await page.waitForFunction(()=>window.strataSite?.ready);
+    assert.equal(await page.$eval('h1',node=>node.textContent),drawerCopy.siteTitle);
+    assert.equal(await page.title(),drawerCopy.siteTitle);
+    assert.equal(await page.$eval('#global-note',node=>node.textContent),drawerCopy.subtitle);
+    const identity=await page.evaluate(()=>{const t=document.querySelector('#site-tagline'),style=getComputedStyle(t);return {text:t.textContent,previous:t.previousElementSibling.id,family:style.fontFamily,size:parseFloat(style.fontSize),titleSize:parseFloat(getComputedStyle(document.querySelector('h1')).fontSize)};});
+    assert.equal(identity.text,drawerCopy.tagline);assert.equal(identity.previous,'site-title');assert.match(identity.family,/Strata Sans/);assert.ok(identity.size<identity.titleSize);
+    const hint=await page.evaluate(()=>{const h=document.querySelector('#marker-hint'),s=getComputedStyle(h),n=getComputedStyle(document.querySelector('#global-note'));
+      return {text:h.textContent,hidden:h.hidden,previous:h.previousElementSibling.id,next:h.nextElementSibling.className,size:s.fontSize,colour:s.color,noteSize:n.fontSize,noteColour:n.color};});
+    assert.deepEqual(hint,{text:'Hover a dot to see what was found.',hidden:false,previous:'era-caption',next:'tools',size:hint.noteSize,colour:hint.noteColour,noteSize:hint.noteSize,noteColour:hint.noteColour});
+    const dot=await page.evaluate(()=>{const b=document.createElement('button');b.className='marker';document.querySelector('#markers').append(b);const s=getComputedStyle(b,'::before'),r={width:s.width,height:s.height,border:s.borderTopWidth,hit:b.getBoundingClientRect().width};b.remove();return r;});
+    assert.deepEqual(dot,{width:'8px',height:'8px',border:'1px',hit:22});
+    assert.equal(await page.$eval('.scale-label',()=>true).catch(()=>false),false,'dom-only has no scene scale labels');
+    // Excavation stops: the season sits on the scrubber; the film's season caption sits under the era title, with no leader.
+    assert.equal(await page.$eval('#year-readout',node=>node.textContent),'2022–23');
+    assert.equal(await page.$eval('#era-caption',node=>node.textContent),'Early Kushan structures');
+    for(const year of [-539,2023]){
+      await page.evaluate(year=>window.strataSite.setYear(year),year);
+      const edges=await page.evaluate(()=>{const label=document.querySelector('#year-readout').getBoundingClientRect(),track=document.querySelector('#timeline').getBoundingClientRect();return {left:label.left,right:label.right,start:track.left,end:track.right};});
+      assert.ok(edges.left>=edges.start-1&&edges.right<=edges.end+1);
+    }
+    await page.focus('#year');await page.keyboard.press('Home');assert.equal(await page.evaluate(()=>window.strataSite.getYear()),-539);
+    await page.keyboard.press('ArrowRight');assert.equal(await page.evaluate(()=>window.strataSite.getYear()),-322);
+    await page.keyboard.press('End');assert.equal(await page.evaluate(()=>window.strataSite.getYear()),2023);
+    await page.evaluate(()=>window.strataSite.setYear(100));
+    assert.equal(await page.$eval('#era-title',node=>node.textContent),'Kushan');
+    assert.equal(await page.$eval('#year-readout',node=>node.textContent),'100 CE');
+    assert.equal(await page.$eval('#era-caption',node=>node.textContent),'');
+    const readout=await page.evaluate(()=>{const label=document.querySelector('#year-readout').getBoundingClientRect(),track=document.querySelector('#timeline').getBoundingClientRect();return {label:{left:label.left,right:label.right,bottom:label.bottom,center:label.left+label.width/2},track:{left:track.left,right:track.right,top:track.top,width:track.width}};});
+    assert.ok(readout.label.bottom<readout.track.top);assert.ok(readout.label.left>=readout.track.left&&readout.label.right<=readout.track.right);
+    assert.ok(Math.abs(readout.label.center-(readout.track.left+yearToX(100,readout.track.width)))<1);
+    await page.click('#features');
+    assert.equal(await page.evaluate(()=>document.activeElement===document.querySelector('#drawer .close')),true);
+    const closeBox=await page.$eval('#drawer .close',node=>({width:node.getBoundingClientRect().width,height:node.getBoundingClientRect().height}));
+    assert.ok(closeBox.width>=44&&closeBox.height>=44);
+    const count=await page.$$eval('.feature-list button',nodes=>nodes.length),expected=await page.evaluate(()=>window.strataSite.featureIds.length);
+    assert.equal(count,expected);
+    await page.click('[data-feature-id="mauryan-ring-well"]');
+    assert.equal(await page.$eval('#drawer-title',node=>node.textContent),'Terracotta ring well');
+    assert.match(await page.$eval('#drawer-body',node=>node.textContent),/70cm/);
+    assert.match(await page.$eval('#drawer-body',node=>node.textContent),/Not known/);
+    const quotes=await page.$$eval('.quote-text',nodes=>nodes.map(node=>node.textContent));assert.equal(quotes.length,new Set(quotes).size);
+    assert.equal(quotes.filter(text=>text==='terracotta rings with a diameter of about 70cm').length,1);
+    assert.equal(await page.$eval('.quote-text',node=>!!node.parentElement.querySelector('cite a')),true);
+    const arithmetic=await page.$eval('.conversion',node=>({size:parseFloat(getComputedStyle(node).fontSize),colour:getComputedStyle(node).color,quoteSize:parseFloat(getComputedStyle(node.previousElementSibling).fontSize),quoteColour:getComputedStyle(node.previousElementSibling).color}));
+    assert.ok(arithmetic.size<arithmetic.quoteSize);assert.notEqual(arithmetic.colour,arithmetic.quoteColour);
+    assert.equal(await page.$eval('.certainty-tag',node=>node.getAttribute('aria-label')),await page.$eval('.certainty-legend',node=>node.textContent));
+    assert.equal(await page.$eval('.certainty-legend',node=>node.textContent),drawerCopy.certaintyLegend?.F||'[TBD]');
+    const links=await page.$$eval('#drawer a',nodes=>nodes.map(node=>({href:node.href,rel:node.rel})));
+    assert.ok(links.length>0&&links.every(link=>link.href.startsWith('https:')&&link.rel.includes('noopener')));
+    await page.keyboard.press('Escape');assert.equal(await page.$eval('#drawer',node=>node.open),false);
+    await page.waitForFunction(()=>document.activeElement===document.querySelector('#features'));
+    await page.evaluate(()=>{const marker=document.createElement('button');marker.id='test-marker';marker.textContent='Terracotta ring well';marker.style.position='fixed';marker.style.left='700px';marker.style.top='200px';marker.addEventListener('click',()=>window.strataSite.openFeature('mauryan-ring-well'));document.body.append(marker);});
+    await page.click('#test-marker');assert.equal(await page.evaluate(()=>document.activeElement===document.querySelector('#drawer .close')),true);
+    await page.click('#drawer .close');await page.waitForFunction(()=>document.activeElement===document.querySelector('#test-marker'));
+    await page.evaluate(()=>document.querySelector('#test-marker').remove());
+    await page.click('[data-panel="about"]');assert.equal(await page.$eval('#drawer-title',node=>node.textContent),'About');
+    const aboutCopy=JSON.parse(fs.readFileSync(path.join(root,'reference','site-about.json'),'utf8'));
+    // Only the About copy: one p per paragraph, newlines as line breaks, no subtitle line, the source-code link safe.
+    assert.deepEqual(await page.$$eval('#drawer-body p',nodes=>nodes.map(node=>[...node.childNodes].map(n=>n.nodeName==='BR'?'\n':n.textContent).join(''))),aboutCopy.paragraphs);
+    assert.ok(!(await page.$eval('#drawer-body',node=>node.textContent)).includes(drawerCopy.subtitle));
+    assert.deepEqual(await page.$$eval('#drawer-body a',nodes=>nodes.map(node=>({text:node.textContent,href:node.href,target:node.target,rel:node.rel}))),Object.entries(aboutCopy.links).map(([text,href])=>({text,href,target:'_blank',rel:'noopener noreferrer'})));
+    assert.deepEqual(await page.$$eval('#drawer-body .nowrap',nodes=>nodes.map(node=>node.textContent)),['16–17','2013–14','2017–18','2022–23','purana-qila-in-layers']);
+    // The source-code URL breaks only after its last slash, and never overflows the drawer, down to 360 px.
+    const urlLayout=()=>{const a=document.querySelector('#drawer-body a'),tail=a.querySelector('.nowrap'),p=a.parentElement,dialog=document.querySelector('#drawer');
+      const range=document.createRange();range.setStart(a.previousSibling,a.previousSibling.textContent.lastIndexOf('Source code: '));range.setEnd(a.firstChild,a.firstChild.length);
+      const headTops=new Set([...range.getClientRects()].map(r=>Math.round(r.top))),tailRect=tail.getBoundingClientRect();
+      return {structure:[...a.childNodes].map(n=>n.nodeName==='WBR'?'<wbr>':n.nodeType===1?`[${n.textContent}]`:n.textContent).join(''),headLines:headTops.size,tailLines:tail.getClientRects().length,
+        tailBelow:tailRect.top>Math.max(...headTops)+1,inside:tailRect.right<=p.getBoundingClientRect().right+.5,overflow:dialog.scrollWidth>dialog.clientWidth||dialog.getBoundingClientRect().right>innerWidth+.5};};
+    const wide=await page.evaluate(urlLayout);
+    assert.deepEqual({structure:wide.structure,headLines:wide.headLines,tailLines:wide.tailLines,inside:wide.inside,overflow:wide.overflow},{structure:'github.com/avinxshKD/<wbr>[purana-qila-in-layers]',headLines:1,tailLines:1,inside:true,overflow:false});
+    for(const [width,height] of [[390,844],[360,800]]){
+      const phone=await browser.newPage();phone.on('pageerror',error=>errors.push(error.message));await phone.setViewport({width,height,deviceScaleFactor:2,isMobile:true,hasTouch:true});
+      await phone.goto(`${server.url}/site.html?dom-only`);await phone.waitForFunction(()=>window.strataSite?.ready);await phone.evaluate(()=>document.fonts.ready);
+      await phone.click('header [data-panel="about"]');const narrow=await phone.evaluate(urlLayout);await phone.close();
+      assert.deepEqual(narrow,{structure:'github.com/avinxshKD/<wbr>[purana-qila-in-layers]',headLines:1,tailLines:1,tailBelow:true,inside:true,overflow:false},`${width}x${height}`);
+    }
+    await page.keyboard.press('Escape');await page.click('[data-panel="sources"]');assert.equal(await page.$$eval('#drawer-body a',nodes=>nodes.length),sourceCopy.sources.length);
+    assert.equal(sourceCopy.sources.length,7);
+    assert.deepEqual(await page.$$eval('#drawer-body a',nodes=>nodes.map(node=>node.href)),sourceCopy.sources.map(source=>source.url));
+    assert.deepEqual(await page.$$eval('#drawer-body a',nodes=>nodes.map(node=>node.textContent)),sourceCopy.sources.map(source=>source.title));
+    assert.deepEqual(await page.$$eval('#drawer-body [id^="source-"]',nodes=>nodes.map(node=>node.id)),sourceCopy.sources.map(source=>`source-${source.id}`));
+    assert.match(await page.$eval('#source-P2 + .source-meta',node=>node.textContent),/30 May 2023/);
+    assert.match(await page.$eval('#source-P1 + .source-meta',node=>node.textContent),/2023–24/);
+    assert.match(await page.$eval('#source-D26 + .source-meta',node=>node.textContent),/01\/02\/2026/);
+    await page.screenshot({path:path.join(out,'dom-only-sources.png')});
+    await page.keyboard.press('Escape');assert.equal(await page.$eval('#film-video',v=>v.getAttribute('poster')),null,'film poster is not set before the dialog opens');
+    // A refused play() (autoplay policy, no codec) leaves the poster and controls up, with no unhandled rejection.
+    await page.evaluate(()=>{window.__playCalls=0;window.__unhandled=0;addEventListener('unhandledrejection',()=>window.__unhandled++);HTMLMediaElement.prototype.play=function(){window.__playCalls++;return Promise.reject(new DOMException('blocked','NotAllowedError'));};});
+    await page.click('[data-panel="film"]');assert.equal(await page.$eval('#film-dialog',node=>node.open),true);await new Promise(resolve=>setTimeout(resolve,50));
+    assert.deepEqual(await page.evaluate(()=>({calls:window.__playCalls,unhandled:window.__unhandled})),{calls:1,unhandled:0},'opening the film starts playback inside the click');
+    const film=await page.$eval('#film-dialog',node=>{const v=node.querySelector('video');return {text:node.textContent.includes('[TBD]'),controls:v.controls,playsinline:v.hasAttribute('playsinline'),preload:v.getAttribute('preload'),poster:new URL(v.poster).pathname,src:new URL(v.querySelector('source').src).pathname,type:v.querySelector('source').type,label:v.getAttribute('aria-label')};});
+    assert.deepEqual(film,{text:false,controls:true,playsinline:true,preload:'none',poster:'/film/strata-web-poster.jpg',src:'/film/strata-web.mp4',type:'video/mp4',label:'Purana Qila, in layers: the 60-second film'});
+    const meta=await page.evaluate(()=>Object.fromEntries([...document.querySelectorAll('meta[property^="og:"],meta[name^="twitter:"],meta[name="description"]')].map(m=>[m.getAttribute('property')||m.name,m.content])));
+    const base='https://avinxshkd.github.io/purana-qila-in-layers/';
+    assert.equal(meta['og:title'],drawerCopy.siteTitle);assert.equal(meta['og:description'],drawerCopy.tagline);assert.equal(meta['twitter:description'],drawerCopy.tagline);assert.equal(meta.description,drawerCopy.tagline);
+    assert.equal(meta['og:url'],base);assert.equal(meta['og:image'],base+'og-image.jpg');assert.equal(meta['twitter:image'],base+'og-image.jpg');assert.equal(meta['twitter:card'],'summary_large_image');
+    assert.deepEqual([meta['og:image:width'],meta['og:image:height']],['1200','630']);
+    assert.equal(await page.$eval('link[rel="icon"]',node=>new URL(node.href).pathname),'/favicon.svg');
+    await page.keyboard.press('Escape');
+    await page.evaluate(()=>window.strataSite.setYear(2023));await page.screenshot({path:path.join(out,'dom-only-desktop.png')});
+    async function dragExcavation(){
+      const box=await page.$eval('#timeline',node=>{const r=node.getBoundingClientRect();return {left:r.left,top:r.top,width:r.width};}),g=scrubberGeometry(box.width);
+      await page.mouse.move(box.left+g.excavationStart,box.top+12);await page.mouse.down();
+      await page.mouse.move(box.left+g.excavationStart+g.excavationWidth*.52,box.top+12,{steps:6});await page.mouse.up();
+      assert.equal(await page.evaluate(()=>window.strataSite.getYear()),2018);
+      assert.equal(await page.$eval('#year-readout',node=>node.textContent),'2017–18');
+      assert.equal(await page.$eval('#era-caption',node=>node.textContent),'Painted Grey Ware layer');
+    }
+    await dragExcavation();await page.screenshot({path:path.join(out,'dom-only-desktop-mid-drag.png')});
+    await page.focus('#year');await page.keyboard.press('ArrowLeft');assert.equal(await page.evaluate(()=>window.strataSite.getYear()),2014);
+    await page.keyboard.press('ArrowLeft');assert.equal(await page.evaluate(()=>window.strataSite.getYear()),2013);
+    await page.keyboard.press('ArrowRight');assert.equal(await page.evaluate(()=>window.strataSite.getYear()),2014);
+    await page.keyboard.press('End');assert.equal(await page.evaluate(()=>window.strataSite.getYear()),2023);
+    await page.setViewport({width:390,height:844,deviceScaleFactor:1});
+    await page.waitForFunction(()=>!document.querySelector('#global-note').closest('header'));
+    const note=await page.$eval('#global-note',node=>({inHeader:!!node.closest('header'),top:node.getBoundingClientRect().top,trackBottom:document.querySelector('#timeline').getBoundingClientRect().bottom}));
+    assert.equal(note.inHeader,false);assert.ok(note.top>note.trackBottom);
+    await page.screenshot({path:path.join(out,'dom-only-mobile.png')});
+    await dragExcavation();await page.screenshot({path:path.join(out,'dom-only-mobile-mid-drag.png')});
+    const seasonRows=await page.$$eval('.season-stop',nodes=>nodes.map(node=>{const r=node.getBoundingClientRect();return {top:r.top,left:r.left,right:r.right};}));
+    assert.ok(seasonRows.every(row=>Math.abs(row.top-seasonRows[0].top)<1));
+    for(let i=1;i<seasonRows.length;i++)assert.ok(seasonRows[i].left>=seasonRows[i-1].right);
+    const trackEnd=await page.$eval('#timeline',node=>node.getBoundingClientRect().right);
+    assert.ok(seasonRows.every(row=>row.right<=trackEnd+.5));
+    assert.ok(Math.abs(seasonRows.at(-1).right-trackEnd)<.5);
+    assert.equal(await page.$eval('.axis-labels',node=>node.textContent),'540 BCE');
+    const toolsGap=await page.evaluate(()=>document.querySelector('#timeline').getBoundingClientRect().top-document.querySelector('.tools').getBoundingClientRect().bottom);
+    assert.ok(toolsGap>=10,`Mobile tools/scrubber gap: ${toolsGap}`);
+    await page.evaluate(()=>window.strataSite.openFeature('mauryan-ring-well'));
+    const mobile=await page.$eval('#drawer',node=>({width:node.getBoundingClientRect().width,height:node.getBoundingClientRect().height,bottom:node.getBoundingClientRect().bottom}));
+    assert.equal(mobile.width,390);assert.ok(mobile.height<=844*.7+1);assert.equal(mobile.bottom,844);
+    await page.screenshot({path:path.join(out,'dom-only-mobile-drawer.png')});
+    await page.evaluate(()=>window.strataSite.markerInteracted());assert.equal(await page.$eval('#marker-hint',node=>node.hidden),true);
+    await page.reload();await page.waitForFunction(()=>window.strataSite?.ready);
+    assert.equal(await page.$eval('#marker-hint',node=>node.hidden),true,'hint stays gone for the session');
+    const phoneDot=await page.evaluate(()=>{const b=document.createElement('button');b.className='marker';document.querySelector('#markers').append(b);const r=b.getBoundingClientRect(),s=getComputedStyle(b,'::before'),out=(s.content,{hit:r.width,dot:s.width,left:s.left});b.remove();return out;});
+    assert.deepEqual(phoneDot,{hit:44,dot:'8px',left:'18px'});
+    assert.deepEqual(errors,[]);
+  }finally{if(browser)await browser.close();await server.close();}
+});

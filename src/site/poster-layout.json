@@ -1,0 +1,109 @@
+{
+  "generatedBy": "scripts/site/poster-layout.cjs",
+  "hero": "output/site/hero-still-rc3n/hero-still.json",
+  "reference": {
+    "key": "{\"position\":[36.418466,29.745297,54.010366],\"quaternion\":[-0.222641,0.292397,0.070198,0.927366],\"fov\":25,\"aspect\":2,\"width\":2400,\"height\":1200,\"cell\":4}",
+    "barBox": {
+      "x0": 938.9289564676745,
+      "x1": 1095.2412027507173,
+      "y0": 938.3313420326289,
+      "y1": 1013.0230565005214
+    },
+    "scaleLabels": {
+      "capPx1080": 15,
+      "gapPx1080": 7,
+      "capMinPx": 10,
+      "gapMinPx": 4,
+      "widthEm": [
+        0.5133,
+        1.5556
+      ]
+    }
+  },
+  "images": {
+    "landscape": {
+      "file": "public/site-poster/hero-landscape.jpg",
+      "sha256": "1aa2a240b429cb2299a7cd857c5e8b5fed24c1ea9637b98ebd3d56b73375fcb5",
+      "width": 1920,
+      "height": 1200,
+      "blockCentroid": [
+        1043.2,
+        493.8
+      ],
+      "blockBox": {
+        "x": 600,
+        "y": 136,
+        "width": 880,
+        "height": 744
+      },
+      "keepClear": [
+        {
+          "x": 588,
+          "y": 344,
+          "width": 28,
+          "height": 28
+        },
+        {
+          "x": 780,
+          "y": 748,
+          "width": 172,
+          "height": 108
+        }
+      ],
+      "capture": {
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 1.3333333333333333,
+        "mode": "general",
+        "k": 0.5974953739817547,
+        "centre": {
+          "x": 753.5276499827314,
+          "y": 368.5679090397531
+        },
+        "titleScale": 1
+      }
+    },
+    "portrait": {
+      "file": "public/site-poster/hero-portrait.jpg",
+      "sha256": "2a6d281241f5cc227232e98a5c3ffdf34cacb0f514bec70d731d8a567eb7529d",
+      "width": 780,
+      "height": 1688,
+      "blockCentroid": [
+        391.8,
+        640.7
+      ],
+      "blockBox": {
+        "x": 48,
+        "y": 360,
+        "width": 684,
+        "height": 580
+      },
+      "keepClear": [
+        {
+          "x": 40,
+          "y": 580,
+          "width": 28,
+          "height": 28
+        },
+        {
+          "x": 180,
+          "y": 836,
+          "width": 152,
+          "height": 100
+        }
+      ],
+      "capture": {
+        "width": 390,
+        "height": 844,
+        "deviceScaleFactor": 2,
+        "mode": "portrait-band",
+        "k": 0.3097472924187726,
+        "centre": {
+          "x": 180.75162454873646,
+          "y": 319.2585458032491
+        },
+        "titleScale": 0.8
+      }
+    }
+  }
+}
