@@ -1,0 +1,589 @@
+{
+ "format": "strata-site-tier",
+ "version": 1,
+ "defaultStep": 12,
+ "firstView": [
+  "core",
+  "grids"
+ ],
+ "packs": {
+  "grids": {
+   "file": "grids.6dd96d346d17219e.bin",
+   "bytes": 1831575,
+   "inflatedBytes": 3397096,
+   "sha256": "6dd96d346d17219e4d29b132a72449d2fbf73d2a08444a4a683f3c813f144934"
+  },
+  "core": {
+   "file": "core.04dc3f5db5d295cb.bin",
+   "bytes": 5465402,
+   "inflatedBytes": 16352420,
+   "sha256": "04dc3f5db5d295cb3bbd71f08e8793bfe40eaa2350610b627fce11e7a571cc71"
+  },
+  "step-0": {
+   "file": "step-0.a8928de8622bfe58.bin",
+   "bytes": 932985,
+   "inflatedBytes": 5560316,
+   "sha256": "a8928de8622bfe586f2829e09331d0981ed5db6f8cce5d44f127f474498472c3"
+  },
+  "step-1": {
+   "file": "step-1.429b99c306caa251.bin",
+   "bytes": 760618,
+   "inflatedBytes": 1054324,
+   "sha256": "429b99c306caa25125142785020e26d38f21734831f5b38ac7e4a3d4b752c0c2"
+  },
+  "step-2": {
+   "file": "step-2.05a2672392592add.bin",
+   "bytes": 827658,
+   "inflatedBytes": 1181524,
+   "sha256": "05a2672392592add17d309d7acf4bc76942310c18bfd633eaa16292f24b4aae3"
+  },
+  "step-3": {
+   "file": "step-3.d9cf065083682f9f.bin",
+   "bytes": 867930,
+   "inflatedBytes": 1256916,
+   "sha256": "d9cf065083682f9f8d8762549df6e8403e2e716695d7c89444c9376c3d68c610"
+  },
+  "step-4": {
+   "file": "step-4.83a3481abe05b155.bin",
+   "bytes": 922409,
+   "inflatedBytes": 1358808,
+   "sha256": "83a3481abe05b15515f0d83de7b283b8895a425bcf850475f545e3d3620d88bf"
+  },
+  "step-5": {
+   "file": "step-5.041e764e3c92d08d.bin",
+   "bytes": 1092555,
+   "inflatedBytes": 1777504,
+   "sha256": "041e764e3c92d08da8476389a54dfebee4c59a88dc61b21e5e5c67a5ac08bca9"
+  },
+  "step-6": {
+   "file": "step-6.77bc48da5e90a9d5.bin",
+   "bytes": 1034056,
+   "inflatedBytes": 1589404,
+   "sha256": "77bc48da5e90a9d5386d050767c8b410aa32a5b41943036e2ccb039ab98e9a70"
+  },
+  "step-7": {
+   "file": "step-7.ec213e8a2a784594.bin",
+   "bytes": 1014238,
+   "inflatedBytes": 1522072,
+   "sha256": "ec213e8a2a7845944702b48d73d8118a338d0e46f52531c44b5ff6d72f66843a"
+  },
+  "step-8": {
+   "file": "step-8.73d5e673f7258b9f.bin",
+   "bytes": 1082224,
+   "inflatedBytes": 1662164,
+   "sha256": "73d5e673f7258b9fc4800c639697d0706bcce02d3fb33b4a8d3b41e2ff04e67f"
+  },
+  "step-9": {
+   "file": "step-9.ac7e9c531a25c9fe.bin",
+   "bytes": 1146861,
+   "inflatedBytes": 1785700,
+   "sha256": "ac7e9c531a25c9fe0d5816f248dfea3313007dc92bb7c78470c80e3e95637601"
+  },
+  "step-10": {
+   "file": "step-10.03294025b12c7da1.bin",
+   "bytes": 1175402,
+   "inflatedBytes": 1824692,
+   "sha256": "03294025b12c7da1159b1744b568098ec8ee7b2a1ef3811794657a233ebfc90e"
+  },
+  "step-11": {
+   "file": "step-11.c72960a05d2a01c7.bin",
+   "bytes": 1210019,
+   "inflatedBytes": 1893080,
+   "sha256": "c72960a05d2a01c7f026e7772618a80c9496f0ade4bc8c83bd1975736c0df893"
+  }
+ },
+ "pages": {
+  "z+": {
+   "kind": "plane",
+   "group": "first",
+   "plane": {
+    "u": [
+     0.041666666666666664,
+     0,
+     0,
+     0.5
+    ],
+    "v": [
+     0,
+     0.08278145695364239,
+     0,
+     0.7974048481871749
+    ]
+   },
+   "texelMetres": 0.02,
+   "maps": {
+    "albedo": {
+     "file": "page-zp-albedo.170b269210a073cb.webp",
+     "bytes": 64006,
+     "sha256": "170b269210a073cbadcc9085bcc2ee76055c6e00621a7483b745a426d3b87728",
+     "width": 1200,
+     "height": 604,
+     "colorSpace": "srgb"
+    },
+    "normal": {
+     "file": "page-zp-normal.2f64426bf5eae313.webp",
+     "bytes": 20796,
+     "sha256": "2f64426bf5eae31346825ef92de3bacac9573345878a78bb2f780b7868ab45e6",
+     "width": 1200,
+     "height": 604,
+     "colorSpace": "linear"
+    }
+   }
+  },
+  "z-": {
+   "kind": "plane",
+   "group": "first",
+   "plane": {
+    "u": [
+     0.041666666666666664,
+     0,
+     0,
+     0.5
+    ],
+    "v": [
+     0,
+     0.06868131868131867,
+     0,
+     0.6615831432761726
+    ]
+   },
+   "texelMetres": 0.02,
+   "maps": {
+    "albedo": {
+     "file": "page-zn-albedo.6ed81428f0c07a48.webp",
+     "bytes": 72770,
+     "sha256": "6ed81428f0c07a481b898cfb3e6c5e661b8cfdb8e7630401e81b976c369d59ff",
+     "width": 1200,
+     "height": 728,
+     "colorSpace": "srgb"
+    },
+    "normal": {
+     "file": "page-zn-normal.b7d096081782ebb8.webp",
+     "bytes": 20908,
+     "sha256": "b7d096081782ebb857512563287886415a47e717c595fdd4aa1e78ff70bd0e9e",
+     "width": 1200,
+     "height": 728,
+     "colorSpace": "linear"
+    }
+   }
+  },
+  "x+": {
+   "kind": "plane",
+   "group": "first",
+   "plane": {
+    "u": [
+     0,
+     0,
+     0.0625,
+     0.5
+    ],
+    "v": [
+     0,
+     0.08278145695364239,
+     0,
+     0.7974048481871749
+    ]
+   },
+   "texelMetres": 0.02,
+   "maps": {
+    "albedo": {
+     "file": "page-xp-albedo.cc3856c7a550d63e.webp",
+     "bytes": 43184,
+     "sha256": "cc3856c7a550d63e94a2e75f57cae605547a1d9f0a9c79c40d5dc50efef43949",
+     "width": 800,
+     "height": 604,
+     "colorSpace": "srgb"
+    },
+    "normal": {
+     "file": "page-xp-normal.0fac743767ab592d.webp",
+     "bytes": 12662,
+     "sha256": "0fac743767ab592d8396c697757e4b70e79fc6d86906d407f1cd28970b06e7ae",
+     "width": 800,
+     "height": 604,
+     "colorSpace": "linear"
+    }
+   }
+  },
+  "x-": {
+   "kind": "plane",
+   "group": "first",
+   "plane": {
+    "u": [
+     0,
+     0,
+     0.0625,
+     0.5
+    ],
+    "v": [
+     0,
+     0.06906077348066299,
+     0,
+     0.6652382987638863
+    ]
+   },
+   "texelMetres": 0.02,
+   "maps": {
+    "albedo": {
+     "file": "page-xn-albedo.0edfe6053becdeed.webp",
+     "bytes": 49316,
+     "sha256": "0edfe6053becdeed566ab3c0a3c4b215969e5a64d51c9788ae15b6e47efec9a2",
+     "width": 800,
+     "height": 724,
+     "colorSpace": "srgb"
+    },
+    "normal": {
+     "file": "page-xn-normal.0e1f1f835c1ae20a.webp",
+     "bytes": 15830,
+     "sha256": "0e1f1f835c1ae20a9fd00ab673fb458b4af6289c549cd385b047c1693baceb86",
+     "width": 800,
+     "height": 724,
+     "colorSpace": "linear"
+    }
+   }
+  },
+  "top": {
+   "kind": "top",
+   "group": "first",
+   "plane": {
+    "u": [
+     0.041666666666666664,
+     0,
+     0,
+     0.5
+    ],
+    "v": [
+     0,
+     0,
+     0.0625,
+     0.5
+    ]
+   },
+   "texelMetres": 0.02,
+   "gradientMax": 0.03103196620941162,
+   "variationScale": 2,
+   "activeEra": 9,
+   "maps": {
+    "variation": {
+     "file": "page-top-variation.ab7d0955faedec03.webp",
+     "bytes": 56460,
+     "sha256": "ab7d0955faedec038e5b19958a0324fc0e822d3b671dc6795540d33ddfb844d8",
+     "width": 1200,
+     "height": 800,
+     "colorSpace": "linear"
+    },
+    "gradX": {
+     "file": "page-top-gradX.b59fef2642fff3c8.webp",
+     "bytes": 441974,
+     "sha256": "b59fef2642fff3c8165166c3a9dba4ec142efe97095475e2ae513bbdf1f33142",
+     "width": 1200,
+     "height": 800,
+     "colorSpace": "linear"
+    },
+    "gradZ": {
+     "file": "page-top-gradZ.377aa53d0fd03087.webp",
+     "bytes": 436072,
+     "sha256": "377aa53d0fd030871a52995728d4ab96ee5a6de58807a32f215c38fb0d697d1b",
+     "width": 1200,
+     "height": 800,
+     "colorSpace": "linear"
+    }
+   }
+  },
+  "core": {
+   "kind": "atlas",
+   "group": "first",
+   "width": 1088,
+   "height": 1048,
+   "maps": {
+    "albedo": {
+     "file": "page-core-albedo.70aeb3a599079f1b.webp",
+     "bytes": 83884,
+     "sha256": "70aeb3a599079f1bdaa90bf184ccb4e5fa6a640d227f8eae9ce2b2affd49c825",
+     "width": 1088,
+     "height": 1048,
+     "colorSpace": "srgb"
+    },
+    "normal": {
+     "file": "page-core-normal.e016ec05810eac50.webp",
+     "bytes": 51606,
+     "sha256": "e016ec05810eac507a3c49d9648a289e6729020767142e5fa2f1ba1813d41f23",
+     "width": 1088,
+     "height": 1048,
+     "colorSpace": "linear"
+    }
+   }
+  },
+  "step-1": {
+   "kind": "atlas",
+   "group": "step-1",
+   "width": 512,
+   "height": 468,
+   "maps": {
+    "albedo": {
+     "file": "page-step-1-albedo.1c412389e6146413.webp",
+     "bytes": 14312,
+     "sha256": "1c412389e614641368fdc46ecb7ed01dadb7ca68a6d54da93a18885814185003",
+     "width": 512,
+     "height": 468,
+     "colorSpace": "srgb"
+    },
+    "normal": {
+     "file": "page-step-1-normal.f96c447b594ae225.webp",
+     "bytes": 16788,
+     "sha256": "f96c447b594ae22598f498e0787ebf4216fc1093332078c44e4760f86fc18723",
+     "width": 512,
+     "height": 468,
+     "colorSpace": "linear"
+    }
+   }
+  },
+  "step-2": {
+   "kind": "atlas",
+   "group": "step-2",
+   "width": 576,
+   "height": 596,
+   "maps": {
+    "albedo": {
+     "file": "page-step-2-albedo.bd1d9d799b2347f5.webp",
+     "bytes": 18390,
+     "sha256": "bd1d9d799b2347f55dab0d9f02cbbb645a14e936600168e577f69f4135a779a4",
+     "width": 576,
+     "height": 596,
+     "colorSpace": "srgb"
+    },
+    "normal": {
+     "file": "page-step-2-normal.4e190e909b31c82e.webp",
+     "bytes": 19276,
+     "sha256": "4e190e909b31c82e61614b1cdc26efa26701a70cfb4d90ba02d15c66874fbd86",
+     "width": 576,
+     "height": 596,
+     "colorSpace": "linear"
+    }
+   }
+  },
+  "step-3": {
+   "kind": "atlas",
+   "group": "step-3",
+   "width": 576,
+   "height": 568,
+   "maps": {
+    "albedo": {
+     "file": "page-step-3-albedo.03607deec90c0771.webp",
+     "bytes": 19032,
+     "sha256": "03607deec90c0771d49e6380804ac77613d488b4507d883f6996b6427b0bd287",
+     "width": 576,
+     "height": 568,
+     "colorSpace": "srgb"
+    },
+    "normal": {
+     "file": "page-step-3-normal.7d48bcfb234a4ffd.webp",
+     "bytes": 17886,
+     "sha256": "7d48bcfb234a4ffd400611cacf7abeab94b06ba1088bb3a12a08a77a11455c26",
+     "width": 576,
+     "height": 568,
+     "colorSpace": "linear"
+    }
+   }
+  },
+  "step-4": {
+   "kind": "atlas",
+   "group": "step-4",
+   "width": 576,
+   "height": 520,
+   "maps": {
+    "albedo": {
+     "file": "page-step-4-albedo.ba16b5b4430c5ff8.webp",
+     "bytes": 18442,
+     "sha256": "ba16b5b4430c5ff88c083461a5587d19e7c9323798a6ecd6bb7026862852463b",
+     "width": 576,
+     "height": 520,
+     "colorSpace": "srgb"
+    },
+    "normal": {
+     "file": "page-step-4-normal.c7291a7037d89260.webp",
+     "bytes": 18938,
+     "sha256": "c7291a7037d8926049c0a012ab6afba4fa8e0d9d67fe2260afad098941f8a1ea",
+     "width": 576,
+     "height": 520,
+     "colorSpace": "linear"
+    }
+   }
+  },
+  "step-5": {
+   "kind": "atlas",
+   "group": "step-5",
+   "width": 576,
+   "height": 456,
+   "maps": {
+    "albedo": {
+     "file": "page-step-5-albedo.51b0546c0d965dc3.webp",
+     "bytes": 17902,
+     "sha256": "51b0546c0d965dc37d7477346287840487a65c7d49ffdfd56043aebba5217324",
+     "width": 576,
+     "height": 456,
+     "colorSpace": "srgb"
+    },
+    "normal": {
+     "file": "page-step-5-normal.889ceb414ac60914.webp",
+     "bytes": 18466,
+     "sha256": "889ceb414ac60914eda21c10c3aa976d75942bd0b2988ca9f8bc23a81a093a13",
+     "width": 576,
+     "height": 456,
+     "colorSpace": "linear"
+    }
+   }
+  },
+  "step-6": {
+   "kind": "atlas",
+   "group": "step-6",
+   "width": 512,
+   "height": 476,
+   "maps": {
+    "albedo": {
+     "file": "page-step-6-albedo.6067070caeac4696.webp",
+     "bytes": 17504,
+     "sha256": "6067070caeac4696f90c73d111db27b01be7b4305cce51200e59628c9e6d0341",
+     "width": 512,
+     "height": 476,
+     "colorSpace": "srgb"
+    },
+    "normal": {
+     "file": "page-step-6-normal.8a0d4d89002e771e.webp",
+     "bytes": 18544,
+     "sha256": "8a0d4d89002e771ed18614da55de2a2a54930a29bb5b853f9203ba5c63082bfc",
+     "width": 512,
+     "height": 476,
+     "colorSpace": "linear"
+    }
+   }
+  },
+  "step-7": {
+   "kind": "atlas",
+   "group": "step-7",
+   "width": 576,
+   "height": 472,
+   "maps": {
+    "albedo": {
+     "file": "page-step-7-albedo.82f7fc3b08be2dd0.webp",
+     "bytes": 19266,
+     "sha256": "82f7fc3b08be2dd0e59d809a5503772ed48080a6017af21cd63fa808bd51bb61",
+     "width": 576,
+     "height": 472,
+     "colorSpace": "srgb"
+    },
+    "normal": {
+     "file": "page-step-7-normal.7613f143126ae1cd.webp",
+     "bytes": 18754,
+     "sha256": "7613f143126ae1cda400929381c9404111e344b69bfd65257add91febdab8e47",
+     "width": 576,
+     "height": 472,
+     "colorSpace": "linear"
+    }
+   }
+  },
+  "step-8": {
+   "kind": "atlas",
+   "group": "step-8",
+   "width": 576,
+   "height": 472,
+   "maps": {
+    "albedo": {
+     "file": "page-step-8-albedo.648e35d30e33e407.webp",
+     "bytes": 18082,
+     "sha256": "648e35d30e33e4071108f3f25585dad2d290460c31fcac04b38e6f7addc1831c",
+     "width": 576,
+     "height": 472,
+     "colorSpace": "srgb"
+    },
+    "normal": {
+     "file": "page-step-8-normal.2edb9d504445034f.webp",
+     "bytes": 18668,
+     "sha256": "2edb9d504445034f81922ed39742dc3b6fa2fc1df8c94def9acf1b1ff43497be",
+     "width": 576,
+     "height": 472,
+     "colorSpace": "linear"
+    }
+   }
+  },
+  "step-9": {
+   "kind": "atlas",
+   "group": "step-9",
+   "width": 576,
+   "height": 472,
+   "maps": {
+    "albedo": {
+     "file": "page-step-9-albedo.08165e21b53d3f80.webp",
+     "bytes": 17692,
+     "sha256": "08165e21b53d3f802bbe1c7cb5d5828f0902b36dac25319c4826de3321f80bf6",
+     "width": 576,
+     "height": 472,
+     "colorSpace": "srgb"
+    },
+    "normal": {
+     "file": "page-step-9-normal.cb6fd6d7cad4ee65.webp",
+     "bytes": 18782,
+     "sha256": "cb6fd6d7cad4ee650bcab05893d5631a8e5fd0dd64f8065cc3c1c901151b6f1d",
+     "width": 576,
+     "height": 472,
+     "colorSpace": "linear"
+    }
+   }
+  },
+  "step-10": {
+   "kind": "atlas",
+   "group": "step-10",
+   "width": 576,
+   "height": 476,
+   "maps": {
+    "albedo": {
+     "file": "page-step-10-albedo.3561c8d4bf7e3dc7.webp",
+     "bytes": 20166,
+     "sha256": "3561c8d4bf7e3dc7a45ef61e207d57f43d318e03b73a917656a34c7d872d18a3",
+     "width": 576,
+     "height": 476,
+     "colorSpace": "srgb"
+    },
+    "normal": {
+     "file": "page-step-10-normal.5e094f436cbbb0af.webp",
+     "bytes": 18772,
+     "sha256": "5e094f436cbbb0af5b725655e44bae2fb6fffea1b2b5e8d02b50880e6b7bfa16",
+     "width": 576,
+     "height": 476,
+     "colorSpace": "linear"
+    }
+   }
+  },
+  "step-11": {
+   "kind": "atlas",
+   "group": "step-11",
+   "width": 512,
+   "height": 492,
+   "maps": {
+    "albedo": {
+     "file": "page-step-11-albedo.da6519af605fe9be.webp",
+     "bytes": 16356,
+     "sha256": "da6519af605fe9be5c7b664df5b10c4f9b49ccad4939d047ceccaa2e5dfbb0e2",
+     "width": 512,
+     "height": 492,
+     "colorSpace": "srgb"
+    },
+    "normal": {
+     "file": "page-step-11-normal.d562d056a7078643.webp",
+     "bytes": 17618,
+     "sha256": "d562d056a7078643480ea511aee36522f6b81d4f8578f3db8fd6611db532a157",
+     "width": 512,
+     "height": 492,
+     "colorSpace": "linear"
+    }
+   }
+  }
+ },
+ "firstViewPages": [
+  "z+",
+  "z-",
+  "x+",
+  "x-",
+  "top",
+  "core"
+ ]
+}
