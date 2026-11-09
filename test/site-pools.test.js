@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import crypto from 'node:crypto';
-import {readFileSync} from 'node:fs';
+import {existsSync,readFileSync} from 'node:fs';
 import * as THREE from 'three';
 import {loadSitePools} from '../src/site/pools.js';
 import {cropField,expandCrop} from '../src/site/pool-field.js';
@@ -10,9 +10,11 @@ import {createCalloutEmphasis} from '../src/film/emphasis.js';
 
 const sha=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 const site=new URL('../public/site-pools-m2b/',import.meta.url),film=new URL('../public/film-emphasis-m2b/',import.meta.url);
+// public/film-emphasis-m2b/ is film-pipeline output and gitignored, so a fresh clone does not have it.
+const noFilmFields=!existsSync(new URL('manifest.json',film))&&'needs the gitignored public/film-emphasis-m2b/ film fields';
 function fileFetcher(root,log=[]){return async url=>{const name=url.pathname.split('/').pop();log.push(name);try{const bytes=readFileSync(new URL(name,root));return new Response(bytes);}catch{return new Response(null,{status:404});}};}
 
-test('shipped site pool crops re-expand to the exact film fields',()=>{
+test('shipped site pool crops re-expand to the exact film fields',{skip:noFilmFields},()=>{
   const manifest=JSON.parse(readFileSync(new URL('manifest.json',site))),source=JSON.parse(readFileSync(new URL('manifest.json',film)));
   assert.equal(manifest.format,'r8-crop');assert.equal(manifest.size,512);assert.deepEqual(Object.keys(manifest.fields),Object.keys(source.fields));
   for(const [id,record] of Object.entries(manifest.fields)){
@@ -30,7 +32,7 @@ test('crop keeps a zero border so clamp-to-edge sampling is zero outside it',()=
   for(let r=0;r<crop.height;r++){assert.equal(data[r*crop.width],0);assert.equal(data[r*crop.width+crop.width-1],0);}
   assert.deepEqual(expandCrop(data,crop,size),rgba);
 });
-test('site catalogue fetches only the manifest until a pool is asked for, then shares one fetch',async()=>{
+test('site catalogue fetches only the manifest until a pool is asked for, then shares one fetch',{skip:noFilmFields},async()=>{
   const log=[],catalog=await loadSitePools({baseURL:'https://unit.invalid/',fetcher:fileFetcher(site,log),idle:async()=>{}});
   assert.deepEqual(log,['manifest.json']);assert.equal(catalog.isResident('kushan-house'),false);assert.equal(catalog.pools['kushan-house'],undefined);
   const [a,b]=await Promise.all([catalog.ensure('kushan-house'),catalog.ensure('kushan-house')]);assert.equal(a,b);assert.deepEqual(log,['manifest.json','kushan-house.r8']);
