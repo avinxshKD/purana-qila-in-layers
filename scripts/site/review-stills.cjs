@@ -34,7 +34,12 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 async function main(){
   const args=process.argv.slice(2),arg=(n,f)=>{const i=args.indexOf(n);return i<0?f:args[i+1];},headless=!args.includes('--headed');
   const dist=path.resolve(root,arg('--dist','dist')),out=path.resolve(root,arg('--out','output/site/review-rc1')),set=arg('--set','review');
-  if(!['review','cell','first-views'].includes(set))throw new Error('Unknown --set '+set);const shots={review:SHOTS,cell:CELL_SHOTS,'first-views':FIRST_VIEW_SHOTS}[set];
+  if(!['review','cell','first-views'].includes(set))throw new Error('Unknown --set '+set);
+  // --phones 412x775,... [--phone-dpr 2.625] [--phone-years 150,1650]: the first view and each year (default Kushan
+  // 150 CE) at each touch viewport, instead of the set.
+  const phones=arg('--phones',null)?.split(',').map(s=>{const [w,h]=s.split('x').map(Number);return {...phone(w,h),deviceScaleFactor:Number(arg('--phone-dpr',2))};});
+  const years=arg('--phone-years','150').split(',').map(Number),yearName=y=>y===150?'kushan-150':y<0?`${-y}-bce`:`${y}-ce`;
+  const shots=phones?phones.flatMap(viewport=>[{name:`phone-${viewport.width}x${viewport.height}-first-view`,viewport},...years.map(year=>({name:`phone-${viewport.width}x${viewport.height}-${yearName(year)}`,viewport,year}))]):{review:SHOTS,cell:CELL_SHOTS,'first-views':FIRST_VIEW_SHOTS}[set];
   if(fs.existsSync(out))throw new Error('Preserve '+out);if(!fs.existsSync(path.join(dist,'index.html')))throw new Error('No build at '+dist);fs.mkdirSync(out,{recursive:true});
   const server=await serveDist(dist,PORT),report={dist,set,headed:!headless,shots:[]};
   try{

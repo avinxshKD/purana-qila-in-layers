@@ -7,6 +7,7 @@
 // labels (10 px minimum cap, where the still's shrink with it) and the lighter 3D backdrop can, so the model shift is
 // the hand-over number and the measured edges a cross-check. The first --dist is the timing baseline; the last is the build under test.
 // Usage: node scripts/site/poster-handoff.cjs --dist output/site/deploy-dry-rc2d,output/site/deploy-dry-rc3c --out output/site/poster-handoff-rc3c [--repeat 3]
+//   [--only 1440x900,...] [--phones 412x775,... [--phone-dpr 2.625]] (touch viewports, timed like 390x844)
 const fs=require('node:fs'),path=require('node:path'),{root,launch}=require('../browser.cjs'),{withGpu}=require('../gpu-lock.cjs'),{BASE,serveDist}=require('./deploy-check.cjs'),{readRGB}=require('../round6-checks.cjs');
 const PORT=5188,CAP_MS=1500000,GRID=2,BACKGROUND_LUMA=48;
 const phone=(width,height)=>({width,height,deviceScaleFactor:2,isMobile:true,hasTouch:true});
@@ -36,7 +37,9 @@ async function main(){
   const args=process.argv.slice(2),arg=(n,f)=>{const i=args.indexOf(n);return i<0?f:args[i+1];},repeat=+arg('--repeat','3');
   const dists=String(arg('--dist','dist')).split(',').map(d=>path.resolve(root,d)),out=path.resolve(root,arg('--out','output/site/poster-handoff-r1')),test=dists[dists.length-1];
   if(fs.existsSync(out))throw new Error('Preserve '+out);for(const d of dists)if(!fs.existsSync(path.join(d,'index.html')))throw new Error('No build at '+d);fs.mkdirSync(out,{recursive:true});
-  const only=arg('--only',null)?.split(','),viewports=only?VIEWPORTS.filter(v=>only.includes(`${v.width}x${v.height}`)):VIEWPORTS;
+  const only=arg('--only',null)?.split(','),phones=arg('--phones',null)?.split(',').map(s=>{const [w,h]=s.split('x').map(Number);return {...phone(w,h),deviceScaleFactor:Number(arg('--phone-dpr',2))};});
+  const viewports=[...(only?VIEWPORTS.filter(v=>only.includes(`${v.width}x${v.height}`)):phones?[]:VIEWPORTS),...(phones??[])];
+  for(const p of phones??[])TIMED.add(`${p.width}x${p.height}`);
   const layout=JSON.parse(fs.readFileSync(path.join(root,'src/site/poster-layout.json'),'utf8')),report={dists:dists.map(d=>path.relative(root,d).split(path.sep).join('/')),timing:[],handoff:[]};
   const servers=new Map();for(const d of dists)servers.set(d,await serveDist(d,PORT+[...servers.keys()].length));
   try{

@@ -134,6 +134,17 @@ export function solvePortraitBand({width,height,referenceFor,hudFor,titleScales=
   }
   return fallback?{...fallback,tried}:{feasible:false,reason:'No portrait band fit at 88-90% width',tried};
 }
+// Portrait fallback: the HUD zones span the full width, so every column of the search grid scores the same and the
+// search keeps its first, the left edge. Centring keeps the scale and every HUD clearance (checked) and only adds edge room.
+// The block is centred, not the framed box: at a small k the scale-label pad reaches past the block's left side.
+// block is the reference without that pad (referenceFor(Infinity)); the framed box stays inside the side reserve.
+function centreAcross(framing,reference,block,hud,width,height){
+  const k=framing.k,o=reference.centre,b=reference.bounds,R=framing.reserve,bb=block.bounds;
+  const x=Math.min(Math.max(width/2-k*((bb.x0+bb.x1)/2-o.x),R.left-k*(b.x0-o.x)),width-R.right-k*(b.x1-o.x)),c={x,y:framing.centre.y};
+  const clearances=hud.map(item=>({id:item.id,clearance:screenClearance(reference,k,c,item.rect)}));
+  if(clearances.some(x=>x.clearance<framing.required-1e-6))return framing;
+  return {...framing,centre:c,offset:{x:c.x-width/2,y:c.y-height/2},bounds:screenBounds(reference,k,c),clearances};
+}
 // The site's framing for a viewport, shared by the 3D view and the hero still shown before it. Phones: the portrait
 // band, narrow screens trying smaller state titles; otherwise (or if no band fit exists) the general solver with the
 // callout column reserved either side. referenceFor(k) is the reference with the scale-bar label pad sized for scale
@@ -156,7 +167,7 @@ export function solveSiteFraming({width,height,referenceFor,hudFor,metrics,warn=
   // The label block is CSS px; sizing it at 90% of the first k keeps it conservative after the re-solve.
   const reference=first.feasible?referenceFor(first.k*.9):null;
   let framing=first.feasible?solveFraming({reference,width,height,hud,reserve}):first;
-  if(framing.feasible)framing={...framing,mode:'general',titleScale:1};
+  if(framing.feasible){framing={...framing,mode:'general',titleScale:1};if(portrait)framing=centreAcross(framing,reference,referenceFor(Infinity),hud,width,height);}
   else warn('Site framing infeasible; using unframed hero',framing.reason);
   return {framing,reference:framing.feasible?reference:null};
 }
